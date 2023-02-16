@@ -2,17 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+### Setup: npm installs required
+npm install react-scripts --save
+npm install react-router-dom --save
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
 
+
+
 ### `npm start`
+
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You may also see any lint errors in the console.\
+
+If you get an error 'react-scripts is not recognised as an internal or external command.' check if your node_modules/
+is available.   Note this directory is not in Git and needs to be added manually after first checking out the project.
+
+Add it manually by running the following command:
+$ npm install react-scripts --save
+
+Then `npm start` once more.
+
 
 ### `npm test`
 
