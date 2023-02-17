@@ -32,6 +32,13 @@ const styles = {
     
 
 
+//import BreathingBubble from '../components/BreathingBubbleAttempt1';
+//import BreathingBubble from '../components/BreathingBubbleAttempt2';
+import BreathingBubble from '../components/BreathingBubble';
+
+
+
+
 function Menu(){
 
     const navigate = useNavigate();
@@ -39,6 +46,7 @@ function Menu(){
 
     return (
         <>
+
             <h3>Menu</h3>
             
 
@@ -50,6 +58,7 @@ function Menu(){
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes Tool"/>
 
             </div>
+
         </>
     )
 }

@@ -1,3 +1,17 @@
+
+
+/* VARIABLES */
+:root{
+  --primary-light:#b9efef;
+  --primary-dark:#1f7676;
+  --primary-medium:#3badad;
+
+  --secondary-light:#f6fce0;
+  --secondary-medium:#f5dcc8;
+  --secondary-dark:#ad3b5d86;
+
+}
+
 /* RESETS */
 
 * {
@@ -11,6 +25,8 @@ header {
   align-items: center;
   padding: 2% 3%;
 }
+
+
 
 .logo {
   text-decoration: none;
