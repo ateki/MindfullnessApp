@@ -8,10 +8,12 @@ import Menu from './pages/Menu'
 import Garden from './pages/Garden'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Breathing from './pages/Breathing'
-import Pomodoro from './pages/Pomodoro'
-import Meditations from './pages/Meditations'
-import Sounds from './pages/Sounds'
+
+import Breathing from './sub-pages/Breathing'
+import Pomodoro from './sub-pages/Pomodoro'
+import Meditations from './sub-pages/Meditations'
+import Sounds from './sub-pages/Sounds'
+import Quotes from './sub-pages/Quotes'
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
       <Route path="/pomodoro" element={<Pomodoro/>} />
       <Route path="/meditations" element={<Meditations/>} />
       <Route path="/sounds" element={<Sounds/>} />
+      <Route path="/quotes" element={<Quotes/>} />
 
 
 

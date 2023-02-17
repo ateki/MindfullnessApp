@@ -55,6 +55,7 @@ function Menu(){
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing Tool"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditations Tool"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music Tool"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes Tool"/>
 
             </div>
 
