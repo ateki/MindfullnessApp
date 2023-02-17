@@ -42,3 +42,24 @@ nav a {
 nav a:not(:last-child) {
   margin-right: 15px;
 }
+
+
+/* Quote */
+
+.quoteDiv {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 2rem;
+}
+
+p.quote {
+  margin-top: .5%;
+  font-size: 25px;
+}
+
+p.author {
+  margin-top: .5%;
+  font-size: 18px;
+}
