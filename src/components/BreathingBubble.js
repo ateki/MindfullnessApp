@@ -113,113 +113,71 @@ const CLASSNAME_CONTAINER_GROW = 'container inflate_bubble';
 const CLASSNAME_CONTAINER_SHRINK = 'container deflate_bubble';
 
 
-/* const testHelperFunc  = (msg) => {
-    console.log(`testHelperFunc ( ${msg} called   ....`);
-}; */
-
 
 /**
  * The below visually replicates inhale,hold,exhale breath: where change in breathing is timed and stage of
  * breathing is displayed in a prompt message.
  * 
  * NOTE: Currently the below has 2 concerns:
- * 1) Use of utility functions did not appear to work.  usePrompt, useState, useEffect only seemed to work when called
+ * Use of utility functions did not appear to work.  usePrompt, useState, useEffect only seemed to work when called
  * directly in the React component function, not from a utility function.
- * 2) On page load, breathing cycle does not start until end of first interval (pause of approx 9 secs).
- * This can only be corrected by repeating the 2 setTimeout blocks of code before the setInterval block.
- * However, that makes BreathingBubble even longer unless can get utility functions working.
- * 
+ * TODO: Break down the above code in utility function/s but need to use REACT hooks effect and state from below
  * @param {*} props 
  * @returns html representing breathing bubble - visually shows different stages of breathing cycle
  */
-
-// TODO: Break down the above code in utility function/s but need to use REACT hooks effect and state from below
 function BreathingBubble(props) {
 
     const [prompt, setPrompt] = useState(''); 
     const [containerClasses, setContainerClasses] = useState(CLASSNAME_CONTAINER_GROW);   //  to mimic inhale/exhale
 
+    const breathingCycleAnimation  = () => {
+        console.log(`breathingCycleAnimation ...`);
+             // Initial breathing cycle before first delay of setInterval kicks in
+             console.log(MSG_BREATHE_IN);
+             setPrompt(MSG_BREATHE_IN);
+             setContainerClasses(CLASSNAME_CONTAINER_GROW);
+     
+             setTimeout(() => {
+                   // stage: hold breathe for holdTime
+                   console.log(MSG_HOLD);
+                   setPrompt(MSG_HOLD);
+                   //setContainerClasses(CLASSNAME_CONTAINER_HOLD); 
+                   
+                   setTimeout(() => {
+                         // stage:  breathe out until interval reaches totalCycleTime (time remaining)
+                         console.log(MSG_BREATHE_OUT);
+                         setPrompt(MSG_BREATHE_OUT);
+                         setContainerClasses(CLASSNAME_CONTAINER_SHRINK);
+                       
+                   }, holdTime);  // setTimeout
+     
+             }, breatheTime); // setTimeout
 
-
-    const testHelperFunc  = (msg) => {
-        console.log(`testHelperFunc ( ${msg} called   ....`);
     }; 
 
 
 
+    useEffect(() => {
+        breathingCycleAnimation(); 
 
-
-
-    // Repeat cycle of breathing - so animation runs every totalCycleTime
-      useEffect(() => {
-
-        
-        testHelperFunc(`call before interval...`); 
-
-        // Initial breathing cycle before first delay of setInterval kicks in
-        console.log(MSG_BREATHE_IN);
-        setPrompt(MSG_BREATHE_IN);
-        setContainerClasses(CLASSNAME_CONTAINER_GROW);
-
-        setTimeout(() => {
-              // stage: hold breathe for holdTime
-              console.log(MSG_HOLD);
-              setPrompt(MSG_HOLD);
-              //setContainerClasses(CLASSNAME_CONTAINER_HOLD); 
-              
-              setTimeout(() => {
-                    // stage:  breathe out until interval reaches totalCycleTime (time remaining)
-                    console.log(MSG_BREATHE_OUT);
-                    setPrompt(MSG_BREATHE_OUT);
-                    setContainerClasses(CLASSNAME_CONTAINER_SHRINK);
-                  
-              }, holdTime);  // setTimeout
-
-        }, breatheTime); // setTimeout
-
-
+        // Continue breathing cycles - animation runs every totalCycleTime
         const intervalId = setInterval(() => {
 
-              // stage: breathe in for breatheTime
-              console.log(MSG_BREATHE_IN);
-              setPrompt(MSG_BREATHE_IN);
-              setContainerClasses(CLASSNAME_CONTAINER_GROW);
-
-              setTimeout(() => {
-                    // stage: hold breathe for holdTime
-                    console.log(MSG_HOLD);
-                    setPrompt(MSG_HOLD);
-                    //setContainerClasses(CLASSNAME_CONTAINER_HOLD); 
-                    
-                    setTimeout(() => {
-                          // stage:  breathe out until interval reaches totalCycleTime (time remaining)
-                          console.log(MSG_BREATHE_OUT);
-                          setPrompt(MSG_BREATHE_OUT);
-                          setContainerClasses(CLASSNAME_CONTAINER_SHRINK);
-                        
-                    }, holdTime);  // setTimeout
-
-              }, breatheTime); // setTimeout
+            breathingCycleAnimation();
 
         }, totalCycleTime); //setInterval
 
-  
+    
 
-      // Clear interval and avoid memory leak
-      // How? modify useEffect() hook to return function that calls clearInterva()
-      return () => clearInterval(intervalId);
-
-
+        // Clear interval and avoid memory leak
+        // How? modify useEffect() hook to return function that calls clearInterva()
+        return () => clearInterval(intervalId);
     }, []);
 
 
 
     return (
-    
       <>
-
-    
-
        <div className={containerClasses} style={styles.container}>
 
             <div className="circle" style={styles.circle}></div>
@@ -230,8 +188,6 @@ function BreathingBubble(props) {
             
             <div className="gradient_outer_circle" style={styles.gradient_outer_circle}></div>
         </div>
-
-     
       </>
     )
   }
