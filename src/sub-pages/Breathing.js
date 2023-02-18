@@ -1,3 +1,4 @@
+import BreathingBubble from '../components/BreathingBubble';
 
 import imgBg from '../assets/Cave.png';
 
@@ -20,6 +21,7 @@ function Breathing(){
     return(
         <div style={styles.backgroundImg}>
         <h1>Breathing</h1>
+        <BreathingBubble/>
         </div>
     )
 }
