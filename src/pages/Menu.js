@@ -54,25 +54,13 @@ function Menu(){
 
             <div className='menu_options_container' style={styles.container}>
                 
-      {/*           <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Gratefulness"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Priority Matrix"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Journal"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Worry Time/ Worry Tree"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditation"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music"/>
-
- */}
                 
-                
-                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Gratefulness"/>
-                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Journal"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Gratefulness"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Journal"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditation"/>
-                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Priority Helper Matrix"/>
-                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Worry Tree Time"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Priority Helper Matrix"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Worry Tree Time"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music"/>
