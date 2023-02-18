@@ -1,11 +1,7 @@
 import qData from '../qData.json'
+import '../styles/quote.css'
+import BookIcon from '../assets/BookIcon.png'
 
-const styles = {
-    h3: {
-        textAlign: 'center',
-        marginTop: '2rem'
-    }
-}
 
 function Quotes() {
     function generateRandomQuote() {
@@ -16,17 +12,17 @@ function Quotes() {
     const randomQuote = generateRandomQuote();
   
     return (
-      <>
-        <div className="quoteDiv">
-        <h1 style={styles.h3}>Quotes</h1>
+        <div className="quoteDiv quoteBackground">
+        <h1>Quotes</h1>
           <p className="quote">"{randomQuote.quote}"</p>
           <p className="author">- {randomQuote.author}</p>
+
+          <div className="img-container">
+          <img className="book" src={BookIcon} />
+          </div>
         </div>
-      </>
+    
     );
   }
-  
-  
-  
 
 export default Quotes

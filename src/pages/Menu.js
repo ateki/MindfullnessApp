@@ -34,7 +34,7 @@ const styles = {
 
 //import BreathingBubble from '../components/BreathingBubbleAttempt1';
 //import BreathingBubble from '../components/BreathingBubbleAttempt2';
-import BreathingBubble from '../components/BreathingBubble';
+// import BreathingBubble from '../components/BreathingBubble';
 
 
 

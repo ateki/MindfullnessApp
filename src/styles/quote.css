@@ -1,0 +1,39 @@
+.quoteBackground{
+  background: url("../assets/Cave.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.quoteDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 2rem;
+    color: #fff;
+  }
+  
+  
+  p.quote {
+    margin-top: .5%;
+    font-size: 25px;
+  }
+  
+  p.author {
+    margin-top: .5%;
+    font-size: 18px;
+  }
+
+  .book {
+    max-width: 300px;
+    height: auto;
+  }
