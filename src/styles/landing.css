@@ -1,0 +1,56 @@
+.landingBackground1{
+    background: url("../assets/LandingPage.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.mainTitle{
+    font-family: "RammettoOneRegular";
+    color: white;
+    font-size: 100px;
+}
+
+.bodyText{
+    font-family:"FutoSansMedium" ;
+    color: white;
+}
+
+.textContainer{
+    position: relative;
+    top: 250px;
+    left: 60px;
+}
+
+.landingButton{
+    background-color: #F08A9B;
+    font-family:"FutoSansBold" ;
+    font-size: ;
+    color: white;
+    border-style: none;
+    padding: 16px 40px 16px 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.landingButton:hover{
+    background-color: #d87c8c;  
+}
+
+.petals{
+    position: absolute;
+    filter: blur(5px);
+}
+
+.landingBackground2{
+    background: url("../assets/Waterfall.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
