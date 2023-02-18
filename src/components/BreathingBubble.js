@@ -1,104 +1,84 @@
-import { useState, useEffect } from 'react';
-
-
-
-
-console.log('Breathing Bubble loading...');
-
-// TODO: Can we see colours: as per index.css
-const COLORS = {
-  primaryLight: '#b9efef',
-  primaryMedium: '#3badad',
-  primaryDark: '#1f7676',
-
-  secondaryLight: '#1f7676',
-  secondaryMedium: '#f5dcc8',
-  secondaryDark: '#ad3b5d86'
-}
-
-
-// ?? Can we use global colour variables below?
-
-const styles = {
-  
-/*  "--primary-light":#b9efef,
- "--primary-dark":#1f7676,
- "--primary-medium":#3badad,
-
-  --primary-dark:#1f7676;
-  --primary-medium:#3badad;
-
-  --secondary-light:#f6fce0;
-  --secondary-medium:#f5dcc8;
-  --secondary-dark:#ad3b5d86;
-
-}
+/**
+ * Filename: BreathingBubble.js
+ * Contents:  Component is visual animation of a breathing cycle: takes user visually through a breathing cycle with breath in, hold, breathe out stages.
+ * Each timed to encourage slow deep breath.
+ * Circle is shown expanding and contracting in time to the stages of breathing:  expands as inhale,
+ * contracts as exhale).  
+ * As though circles represent bubble inflating and defalting.
+ * 
  */
 
-  head: {
+import { useState, useEffect } from 'react';
+import '../styles/breathing_bubble.css';
 
+
+
+
+// TODO: Decide on setting colours at higher level so that pages using a certain background have associated colours available
+// TODO: Should we move these now to the imported BreathingBubble.css?  No benefit to be here.
+const styles = {
+
+  body: {
+    backgroundImage: 'url("../assets/Cave.png")'
   },
-
-  main: {
-
-  },
-
+   
   container: {
     display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      /* background: 'red',  */  //for testing only
-     /*  padding: '25px 3%', */
       height: '300px',
       width: '300px',
-/*       height: '250px',
-      width: '250px', */
       margin: 'auto',   //middle
       position: 'relative',
-      transform: 'scale(1)',
+      transform: 'scale(1)',      // default scaling - used to  grow and shrink
       textAlign: 'center',
       marginBottom: '25px',
       lineHeight: '1.5'
-  
   },
 
 
-
-
-    /* Solid coloured circle - middle */
+    /* Solid coloured circle - appears in middle, top element */
     circle: {
-      backgroundColor: 'darkgreen',
-      height: '100%', // of container ie 300px
-      width: '100%', // of container
-      position: 'absolute', // within container
-      top: '0',
-      left: '0',  // middle?
-      zIndex: '1', // on top 
       
-      borderRadius: '50%' // circle
+      borderRadius: '50%',     // circle
+      backgroundColor: 'var(--primary-dark1)',
+      /* TODO: Still playing about with colours */
+      /* backgroundColor: 'var(--primary-dark3)', */
+      /* backgroundColor: 'var(--primary-dark2)', */
+      /* backgroundColor: 'var(--font-medium)',  */
+      height: '100%',         
+      width: '100%',         
+      position: 'absolute',   
+      top: '0',
+      left: '0', 
+      zIndex: '1'
     },
-    // https://www.sitepoint.com/create-css-conic-gradients-pie-charts/
 
-    /* Outer circle representing border */
+
+    /* Outer circle representing border - using conic gradient property as background - with gradient of colour transitions rotated around a center point */
+    /* Appears below */
+    //TODO: Decide on colouring 
     gradient_outer_circle: {
-      // background use conic gradient property
-      /* background: 'conic-gradient(red 45deg, yellow 90deg, green 210deg)',  */  // A conic gradient is a gradient with color transitions rotated around a center point.
-      /* background: 'conic-gradient(lightgreen 135deg, white 90deg, darkgreen 135deg)', */
-      /* background: 'conic-gradient(lightgreen 0% 45%, white 45% 55%,  green 55% 100%)', */
-
-      background: 'conic-gradient(#ad3b5d86 0% 45%, #f6fce0 45% 55%,  #3badad 55% 100%)',
-
-     
+      
+      borderRadius: '50%',    // circle
+      
+      // 3 colours - representing breath in, hold, breath out
+      /* Option1: Indicating Hold breath at bottom */
+      /*      background: 'conic-gradient(#ad3b5d86 0% 45%, #f6fce0 45% 55%,  #3badad 55% 100%)', */
+      /* Option 2: Indicating  hold breath at top */
+     /*   background: 'conic-gradient(#f6fce0 0% 5%, #ad3b5d86 5% 50%,  #3badad 50% 95%, #f6fce0 95% 100%)', */
+      /* background: 'conic-gradient(var(--primary-light5) 0% 5%, #ad3b5d86 5% 50%,  var(--primary-dark4) 50% 95%, var(--primary-light5) 95% 100%)', */
+      background: 'conic-gradient(var(--light) 0% 5%, #ad3b5d86 5% 50%,  var(--dark) 50% 95%, var(--medium) 95% 100%)',
+    
       // background circle/border needs to be slightly larger than circle/container
       height: '325px',
       width: '325px',
-      // move up and over to left - directly behind circle and dont want to start in same place??
+
+      // move up and over to left 
        top: '-12px',
       left: '-12px', 
-      zIndex: '-1',  // move to behind circle
-      borderRadius: '50%', // circle
-      position: 'absolute'    // within container
-/* https://stackoverflow.com/questions/22406661/how-to-make-one-circle-inside-of-another-using-css#:~:text=Css%3A%20%23circle%20%7B%20margin%3A%2010em%20auto%3B%20background%3A%20%23385a94%3B,are%20always%20perfectly%20positioned%20next%20to%20each%20other. */
+      zIndex: '-1',          //behind main center circle
+      position: 'absolute'    
     },
 
     /* Use animations to have moving pointer effect */
@@ -106,113 +86,97 @@ const styles = {
 
     },
 
-    /* instructional /prompt text - inserted dynamically*/
+    /* instructional /prompt text */
     p: {
       color: 'white',
       zIndex: 2
     },
 
-/*     section: {
-      backgroundColor: '#555'
-    }, */
-   
-    h3: {
-      /* color: '#ddd'  */
-      color: 'red'
-    }
   
   };
 
 
-  
-const MSG_HOLD = "Hold";
-const MSG_BREATHE_IN = "Breath in";
-const MSG_BREATHE_OUT = 'Breathe Out';
+/* Messages reprenting different stages of breathing cycle */
+const MSG_HOLD = 'Hold';
+const MSG_BREATHE_IN = 'Breathe in';
+const MSG_BREATHE_OUT = 'Breathe out';
 
 
-// animation/breathing times for one cycle
-const totalCycleTime = 9000;
+/* animation/breathing times for one cycle */
+const totalCycleTime = 10000;
 const breatheTime = 4000;
 const holdTime = 2000;
 
-const CLASSNAME_CONTAINER_GROW = 'container inflate-bubble';
-const CLASSNAME_CONTAINER_SHRINK = 'container deflate-bubble';
-// Do we need a CLASSNAME_CONTAINER_HOLD?
-const CLASSNAME_CONTAINER_HOLD = 'container ';
+/* container classes for each stage of breathing cycle */
+const CLASSNAME_CONTAINER_GROW = 'container inflate_bubble';
+const CLASSNAME_CONTAINER_SHRINK = 'container deflate_bubble';
+
 
 
 /**
  * The below visually replicates inhale,hold,exhale breath: where change in breathing is timed and stage of
- * breathing is displayed in a prompt.
+ * breathing is displayed in a prompt message.
+ * 
  * NOTE: Currently the below has 2 concerns:
- * 1) Use of utility functions did not appear to work.  usePrompt, useState, useEffect only seemed to work when called
+ * Use of utility functions did not appear to work.  usePrompt, useState, useEffect only seemed to work when called
  * directly in the React component function, not from a utility function.
- * 2) On page load, breathing cycle does not start until end of first interval (pause of approx 9 secs).
- * This can only be corrected by repeating the 2 setTimeout blocks of code before the setInterval block.
- * However, that makes BreathingBubble even longer unless can get utility functions working.
+ * TODO: Break down the above code in utility function/s but need to use REACT hooks effect and state from below
  * @param {*} props 
- * @returns 
+ * @returns html representing breathing bubble - visually shows different stages of breathing cycle
  */
-
-// TODO: Break down the above code in utility function/s
-// TODO: Avoid interval pause when page loads by callling code for one breathing cycle (2 setTimeOuts) straightaway, before call to setInterval above
 function BreathingBubble(props) {
 
-    const [prompt, setPrompt] = useState('');  // cause update in dom each time var changes..
-    const [containerClasses, setContainerClasses] = useState(CLASSNAME_CONTAINER_GROW); // state to mimic inhale/exhale
+    const [prompt, setPrompt] = useState(''); 
+    const [containerClasses, setContainerClasses] = useState(CLASSNAME_CONTAINER_GROW);   //  to mimic inhale/exhale
+
+    const breathingCycleAnimation  = () => {
+        console.log(`breathingCycleAnimation ...`);
+             // Initial breathing cycle before first delay of setInterval kicks in
+             console.log(MSG_BREATHE_IN);
+             setPrompt(MSG_BREATHE_IN);
+             setContainerClasses(CLASSNAME_CONTAINER_GROW);
+     
+             setTimeout(() => {
+                   // stage: hold breathe for holdTime
+                   console.log(MSG_HOLD);
+                   setPrompt(MSG_HOLD);
+                   //setContainerClasses(CLASSNAME_CONTAINER_HOLD); 
+                   
+                   setTimeout(() => {
+                         // stage:  breathe out until interval reaches totalCycleTime (time remaining)
+                         console.log(MSG_BREATHE_OUT);
+                         setPrompt(MSG_BREATHE_OUT);
+                         setContainerClasses(CLASSNAME_CONTAINER_SHRINK);
+                       
+                   }, holdTime);  // setTimeout
+     
+             }, breatheTime); // setTimeout
+
+    }; 
 
 
-    // Repeat cycle of breathing - so animation runs every totalCycleTime
-      useEffect(() => {
 
-        // As delay at start,  we need to go through one animation before interval called
+    useEffect(() => {
+        breathingCycleAnimation(); 
+
+        // Continue breathing cycles - animation runs every totalCycleTime
         const intervalId = setInterval(() => {
 
-            console.log(MSG_BREATHE_IN);
-            setPrompt(MSG_BREATHE_IN);
-            setContainerClasses(CLASSNAME_CONTAINER_GROW);
-
-            /*   container.className = 'container grow inflate_bubble'; */
-
-            setTimeout(() => {
-                setPrompt(MSG_HOLD);
-                console.log(MSG_HOLD);
-                setContainerClasses(CLASSNAME_CONTAINER_HOLD);  // do we need?
-
-
-                setTimeout(() => {
-                    console.log(MSG_BREATHE_OUT);
-                    setPrompt(MSG_BREATHE_OUT);
-                    
-                    setContainerClasses(CLASSNAME_CONTAINER_SHRINK);
-                  /*  container.className = 'container shrink deflate_bubble'; Need to use setEffect*/
-                  /* container.addClass() */
-                    
-                }, holdTime);  // setTimeout
-
-            }, breatheTime); // setTimeout
+            breathingCycleAnimation();
 
         }, totalCycleTime); //setInterval
 
-        // https://sebhastian.com/setinterval-react/#:~:text=How%20to%20use%20setInterval%20%28%29%20method%20inside%20React,setInterval%20%28%29%20method%20inside%20a%20useEffect%20%28%29%20hook.
-        // modify setInterval to reaturn function that calls clearINterval and pass interval id
+    
 
-      // remember to clear interval and avoid memory leak
-      // How? modify useEffect() hook to return function that calls clearInterva()
-      return () => clearInterval(intervalId);
-
-
+        // Clear interval and avoid memory leak
+        // How? modify useEffect() hook to return function that calls clearInterva()
+        return () => clearInterval(intervalId);
     }, []);
+
 
 
     return (
       <>
-        <h3 style={styles.h3}>Test Breathing Bubble</h3>
-
-        {/* <div class="container">  JSX not std html but considered props and some attributes not same. ie: Class  need to use className in JSX which will compile down. */}      
-       {/*  <div class={styles.container}> */} {/* // ids use most often for js targets.  Targetting and handling emleents and changes thro logic diff way */}
-       {/* <div className="container" style={styles.container}> */}
-
        <div className={containerClasses} style={styles.container}>
 
             <div className="circle" style={styles.circle}></div>
@@ -223,7 +187,6 @@ function BreathingBubble(props) {
             
             <div className="gradient_outer_circle" style={styles.gradient_outer_circle}></div>
         </div>
-
       </>
     )
   }

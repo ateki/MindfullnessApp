@@ -1,0 +1,75 @@
+/**** VARIABLES ****/
+
+/** COLOURS **/
+:root{
+ 
+  --light:#b9efef;
+  --dark:#1f7676;
+  --medium:#3badad;
+
+ 
+
+  --primary-light1: #a3dabd;
+  --primary-light2: #c7f7d4;
+  --primary-light3: #b9f5c1;
+
+  --primary-medium1: #3badad;
+  --primary-medium2: #94ded8;
+
+  --secondary-medium1: #ad3b5d86;
+  --secondary-light1: #f5dcc8;
+  --secondary-light2:#f6fce0;
+
+
+
+  --secondary-light: #fff;
+  --primary-dark1: rgb(11, 66, 61);
+  --primary-dark2: rgb(9, 72, 67);
+  --primary-dark3: #1f7676;
+  --primary-dark4: #1e7b7b;
+
+  --primary-light4: rgb(139, 198, 218);
+  --primary-light5: rgb(204, 229, 229);
+
+
+
+  --font-medium: rgb(91, 137, 120);
+  --font-dark: black;
+  --font-light: white;
+}
+
+
+
+
+@keyframes deflate_bubble {
+    from {
+        transform: scale(1.2);
+      }
+      to {
+        transform: scale(1);  /*  default scale */
+      }
+}
+
+@keyframes inflate_bubble {
+  from {
+      transform: scale(1);  /*  default scale */
+    }
+    to {
+      transform: scale(1.2);
+    }
+}
+
+/** Animations **/
+
+
+/* If container has class of inflate_bubble */
+/*  //4 secs, same speed throughout, element retains style values set by last keyframe */
+.container.inflate_bubble {
+  animation: inflate_bubble 4s linear forwards;
+}
+
+.container.deflate_bubble {
+  animation: deflate_bubble 4s linear forwards;
+}
+
+
