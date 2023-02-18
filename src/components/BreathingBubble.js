@@ -9,7 +9,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import '../styles/BreathingBubble.css';
+import '../styles/breathing_bubble.css';
 
 
 
