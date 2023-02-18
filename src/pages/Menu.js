@@ -1,14 +1,23 @@
 import { useNavigate } from "react-router-dom";
 
 
+/* #content {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #66ffff;
+} */
+
+
 const styles = {
 
     container: {
+        position: 'relative',
         display: 'grid',
         gridAutoFlow: 'column',
         gridGap: '20px',
-        margin: 'auto auto',
-        gridTemplateRows: '50px 50px ',
+        top: '200px',
+        margin: '0 auto',
+        gridTemplateRows: '50px 50px 50px 50px 50px ',
         gridTemplateColumns: '200px 200px ',
         padding: '10px',
         justifyContent: 'center',
@@ -32,13 +41,6 @@ const styles = {
     
 
 
-//import BreathingBubble from '../components/BreathingBubbleAttempt1';
-//import BreathingBubble from '../components/BreathingBubbleAttempt2';
-import BreathingBubble from '../components/BreathingBubble';
-
-
-
-
 function Menu(){
 
     const navigate = useNavigate();
@@ -51,11 +53,30 @@ function Menu(){
             
 
             <div className='menu_options_container' style={styles.container}>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro Tool"/>
+                
+      {/*           <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Gratefulness"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Priority Matrix"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Journal"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Worry Time/ Worry Tree"/>
                 <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditations Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes Tool"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditation"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music"/>
+
+ */}
+                
+                
+                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Gratefulness"/>
+                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Journal"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditation"/>
+                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Priority Helper Matrix"/>
+                <input type="button"  disabled='true' style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Worry Tree Time"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music"/>
+
 
             </div>
 
