@@ -1,5 +1,5 @@
 .quoteBackground{
-  background: url("../assets/Cave.png");
+  background: url("../assets/darkBg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -11,29 +11,39 @@
 h1{
     text-align: center;
     margin-top: 2rem;
+    margin-bottom: 3.5rem;
+    color: #2c5555;
 }
 
-.quoteDiv {
+.q-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     text-align: center;
     line-height: 2rem;
-    color: #fff;
+    max-width: 100%;
   }
   
-  
-  p.quote {
+  .quote-div{
     margin-top: .5%;
+    width: 600px;
+    margin-left:auto;
+    margin-right: auto;
+    color: #dce3e5;
+  }
+
+  p.quote {
     font-size: 25px;
   }
   
   p.author {
-    margin-top: .5%;
-    font-size: 18px;
+    font-size: 17px;
+    font-style: italic;
   }
 
-  .book {
-    max-width: 300px;
+  .book-icon {
+    max-width: 250px;
     height: auto;
+    margin-top: 4.5rem;
   }
