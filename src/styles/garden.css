@@ -16,6 +16,21 @@
 
 .tree{
     position: fixed;
-    left: 45%;
-    bottom: 70px;
+    bottom: 0px;
+    width: 100%;
+  height: auto;
+}
+
+.treeButton{
+    width: 200px;
+    height: 40px;
+    position: relative;
+    top: 860px;
+    left: 40px;
+    z-index: 2;
+    background-color: #F08A9B;
+    border-style: none;
+    border-radius: 19px;
+    font-weight: bold;
+    color: white;
 }
