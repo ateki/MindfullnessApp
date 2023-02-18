@@ -6,6 +6,13 @@ import BreathIcon from "../assets/BreathIcon.png";
 import MeditationIcon from "../assets/MeditationIcon.png";
 import QuoteIcon from "../assets/QuoteIcon.png";
 
+/* #content {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #66ffff;
+} */
+
+
 const styles = {
   container: {
     display: "grid",
@@ -79,6 +86,7 @@ function Menu() {
       </div>
     </div>
   );
+
 }
 
 export default Menu;
