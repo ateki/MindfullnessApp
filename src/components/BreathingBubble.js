@@ -116,7 +116,7 @@ const styles = {
       width: '20px',
       height: '190px',  // container half of breathing bubble
       /* background: 'red', */
-      animation: 'rotate 10s linear  infinite',
+      /* animation: 'rotate 10s linear  infinite',  */ //too fast
       transformOrigin: 'bottom center',
 
       zIndex: '11' //TEMP

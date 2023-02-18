@@ -93,6 +93,23 @@
 
 }
 
+/* Probably nearest in timing */
+@keyframes spin4{
+
+     0%{
+         transform: rotate(0deg);
+     }
+     50%{
+         transform: rotate(180deg);
+     }
+     100%{
+         transform: rotate(360deg);
+     }
+ 
+ }
+
+
+
 /* Want to start spin at bottom clockwise */
 
 @keyframes spin3{
@@ -132,7 +149,8 @@
 
 .progress_circle {
  /*  animation: spin 10s linear forwards infinite; */
-  animation: spin2 10s linear forwards infinite;
+  /* animation: spin2 10s linear forwards infinite; */
+  animation: spin4 10s linear forwards infinite;
 /*   transform-origin: 'bottom center';  */
 }
 
