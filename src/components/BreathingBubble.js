@@ -81,18 +81,60 @@ const styles = {
       position: 'absolute'    
     },
 
-    /* Use animations to have moving pointer effect */
-    pointer: {
 
+    
+    /* VISUAL INDICATING STAGE OF BREATHING CYCLE */
+    
+    /* FOR SPINNING TRANSPARENT CIRCLE, with 1% white acting as pointer */
+    /* Ptr to start at bottom of circle where breathing cycle starts with breathe in, rotate at origin */
+    progress_circle: {
+      
+      borderRadius: '50%',    
+      borderStyle: 'none',
+
+      // white section starts at bottom of circle 
+      background: 'conic-gradient(var(--transparent-color) 0% 50%, white 50% 51%, var(--transparent-color) 51% 100%)',
+    
+      // background circle/border needs to be slightly larger than circle/container
+      height: '350px',
+      width: '350px',
+
+      // move up and over to left 
+       top: '-24px',
+      left: '-24px', 
+      zIndex: '-5',          //behind main center circle
+      position: 'absolute'    
     },
+
+
+    /* OTHER POINTER */
+    /*     guide_container: {
+      position: 'absolute',
+       // start above main breathing bubble top middle
+      top: '-40px', 
+      left: '140px',
+      width: '20px',
+      height: '190px',  // container half of breathing bubble
+      //    background: 'red', 
+      // animation: 'rotate 10s linear  infinite',   //too fast
+      transformOrigin: 'bottom center',
+      zIndex: '1' 
+    }, */
+
+    /* Visual to indicate where in breathing cycle we are  */
+/*     guide: {
+      backgroundColor: '#fff',
+      borderRadius: '50px',
+      height: '20px',
+      width: '20px',
+      display: 'block'
+    }, */
 
     /* instructional /prompt text */
     p: {
       color: 'white',
       zIndex: 2
     },
-
-  
   };
 
 
@@ -183,9 +225,13 @@ function BreathingBubble(props) {
 
             <p id="text" style={styles.p}>{prompt}</p>
 
-            <div className="pointer-container"><div className="pointer"></div></div>
+            {/* <div className="guide_container" style={styles.guide_container}><div className="guide" style={styles.guide}></div></div> */}
             
             <div className="gradient_outer_circle" style={styles.gradient_outer_circle}></div>
+
+            {/* Temp test at spinning indicator */}
+            <div className="progress_circle" style={styles.progress_circle}></div>
+        
         </div>
       </>
     )
