@@ -1,0 +1,56 @@
+.menuBackground{
+    background: url("../assets/MenuBackground.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 250vh;
+    width: 100vw;
+}
+
+.menuIconsContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.menuIcon1{
+    margin: 10px 10px 10px 10px;
+}
+.menuIcon1:hover{
+    margin: 10px 10px 10px 10px;
+    opacity: 0.8;
+}
+.menuIcon2{
+    margin: 10px 10px 10px 10px;
+}
+.menuIcon2:hover{
+    margin: 10px 10px 10px 10px;
+    opacity: 0.8;
+}
+
+.menuIcon3{
+    margin: 10px 10px 10px 10px;
+    position: relative;
+    top: 17px;
+}
+.menuIcon3:hover{
+    margin: 10px 10px 10px 10px;
+    opacity: 0.8;
+}
+
+.menuIcon4{
+    margin: 10px 10px 10px 10px;
+}
+.menuIcon4:hover{
+    margin: 10px 10px 10px 10px;
+    opacity: 0.8;
+}
+
+/* @media only screen and (max-width: 400px) {
+    .menuIconsContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+  } */
