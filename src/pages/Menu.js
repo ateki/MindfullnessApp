@@ -1,4 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import BreathingBubble from "../components/BreathingBubble";
+import "../styles/menu.css";
+import PomodoraIcon from "../assets/PomodoraIcon.png";
+import BreathIcon from "../assets/BreathIcon.png";
+import MeditationIcon from "../assets/MeditationIcon.png";
+import QuoteIcon from "../assets/QuoteIcon.png";
 
 
 const styles = {
@@ -34,7 +40,7 @@ const styles = {
 
 //import BreathingBubble from '../components/BreathingBubbleAttempt1';
 //import BreathingBubble from '../components/BreathingBubbleAttempt2';
-// import BreathingBubble from '../components/BreathingBubble';
+
 
 
 
@@ -45,7 +51,7 @@ function Menu(){
 
 
     return (
-        <>
+      <div className="menuBackground">
 
             <h3>Menu</h3>
             
@@ -59,8 +65,22 @@ function Menu(){
 
             </div>
 
-        </>
+            
+            <div className="menuIconsContainer">
+      <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
+      <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
+      <img className="menuIcon3" src={MeditationIcon} onClick={() => navigate(`/Meditations`)}></img>
+      <img className="menuIcon4" src={QuoteIcon} onClick={() => navigate(`/Quotes`)}></img>
+      </div>
+        
+
+      <div className="menu_options_container" style={styles.container}>
+       
+      </div>
+      
+    </div>
+   
     )
 }
- 
-export default Menu
+
+export default Menu;
