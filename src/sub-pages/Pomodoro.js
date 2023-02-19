@@ -1,8 +1,5 @@
-/* import PomodoroTimer from '../components/PomodoroTimer'; */
+
 import PomodoroTimer from '../components/PomodoroTimer';
-/* import PomodoroTimer from '../components/PomodoroTimer4'; */
-/* import PomodoroTimer from '../components/PomodoroTimer2'; */
-/* import PomodoroTimer from '../components/PomodoroTimer3'; */
 
 import imgBg from '../assets/LandingPage.png';
 
