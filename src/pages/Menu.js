@@ -1,14 +1,21 @@
 import { useNavigate } from "react-router-dom";
 
-
-/* #content {
-    width: 400px;
-    margin: 0 auto;
-    background-color: #66ffff;
-} */
+import imgBg from '../assets/LandingPage.png';
 
 
 const styles = {
+
+    
+    backgroundImg: {
+        backgroundImage: `url(${imgBg})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        width: '100vw',  
+        height: '100vh'
+    },
+
 
     container: {
         position: 'relative',
@@ -47,7 +54,8 @@ function Menu(){
 
 
     return (
-        <>
+        
+        <div style={styles.backgroundImg}>
 
             <h3>Menu</h3>
             
@@ -66,7 +74,7 @@ function Menu(){
 
             </div>
 
-        </>
+        </div>
     )
 }
  
