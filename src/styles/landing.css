@@ -56,3 +56,43 @@
     height: 100vh;
     width: 100vw;
 }
+
+.landingBackground3{
+    background: url("../assets/CrystalCave.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+
+
+.meditatingMan{
+    position: absolute;
+    margin-left: 35%;
+    animation: MoveUpDown 13s linear infinite;
+    position: absolute;
+    bottom: -100px;
+}
+
+  
+  @keyframes MoveUpDown {
+    0%, 100% {
+      bottom: -160px;
+    }
+    50% {
+      bottom: -80px;
+    }
+  }
+
+  .landingBackground4{
+    background: url("../assets/Cave.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
