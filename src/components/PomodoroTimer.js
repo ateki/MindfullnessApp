@@ -3,7 +3,11 @@
  * Contents:  
  * 
  */
-// TODO: In last  minute display count down in secs...
+
+/* import Slider from '@mui/material/Slider';
+// or */
+/* import { Slider } from '@mui/material'; */
+
 import { useState, useEffect } from 'react';
 //import '../styles/pomodoro.css';
 
@@ -12,9 +16,6 @@ import { useState, useEffect } from 'react';
 
 const styles = {
 
-/*   body: {
-    backgroundImage: 'url("../assets/Landing.png")'
-  }, */
   wrapper: {
     display: 'flex',
     width: '100%',
@@ -85,8 +86,29 @@ const TIME_DEFAULT = 25;
 const TIME_MIN = 5;
 const TIME_MAX = 60;
 
+const marks = [
+  {
+    value: 5,
+    label: '5 min',
+  },
+  {
+    value: 10,
+    label: '10 min',
+  },
+  {
+    value: 20,
+    label: '20 min',
+  },
+  {
+    value: 60,
+    label: '60 min',
+  },
+];
 
 
+/* function valuetext(value: number) {
+  return `${value}°C`;
+} */
 /**
  * The below visually replicates inhale,hold,exhale breath: where change in breathing is timed and stage of
  * breathing is displayed in a prompt message.
@@ -112,6 +134,17 @@ function PomodoroTimer(props) {
             <div className="timer_circle" style={styles.timer_circle}>
                 <p className="count_down" style={styles.count_down}>{duration}</p>
             </div>
+
+              {/* TODO: Add slider */}
+{/*             <Slider
+              aria-label="Always visible"
+              defaultValue={80}
+              getAriaValueText={valuetext}
+              step={10}
+              marks={marks}
+              valueLabelDisplay="on"
+            /> */}
+
 
             <input type="button"  style={styles.startBtn} onClick={() => console.log('pomodoro start button clicked')} value="Start"/>
 
