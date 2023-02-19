@@ -53,25 +53,33 @@ function Menu(){
     return (
       <div className="menuBackground">
 
-            <h3>Menu</h3>
             
 
-            <div className='menu_options_container' style={styles.container}>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditations Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music Tool"/>
-                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes Tool"/>
-
-            </div>
-
-            
             <div className="menuIconsContainer">
       <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
       <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
       <img className="menuIcon3" src={MeditationIcon} onClick={() => navigate(`/Meditations`)}></img>
       <img className="menuIcon4" src={QuoteIcon} onClick={() => navigate(`/Quotes`)}></img>
       </div>
+
+            <div className='menu_options_container' style={styles.container}>
+                
+                
+                <input type="button"  disabled='true' style={styles.button}  value="Gratefulness"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Journal"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditation"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Priority Helper Matrix"/>
+                <input type="button"  disabled='true' style={styles.button}  value="Worry Tree Time"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro"/>
+                <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music"/>
+
+
+            </div>
+
+            
+           
         
 
       <div className="menu_options_container" style={styles.container}>
