@@ -64,13 +64,13 @@ const styles = {
    
   container: {
       display: 'flex',
-      flexDirection: 'column',
+      /* flexDirection: 'column', */
       alignItems: 'center',
       justifyContent: 'center',
       height: '300px',
       width: '300px',
       margin: 'auto',   //middle
-      position: 'relative',
+     /*  position: 'relative', */
       transform: 'scale(1)',      // default scaling - used to  grow and shrink
       textAlign: 'center',
       marginBottom: '25px',
@@ -78,7 +78,7 @@ const styles = {
   },
  
 
-    /* TIMER CIRCLE  - appears in middle, top element */
+    /* Solid coloured circle - appears in middle, top element */
     timer_circle: {
       
       borderRadius: '50%',     // circle
@@ -86,84 +86,30 @@ const styles = {
       border: '2px solid white',
       color: 'white',
       height: '100%',         
-      width: '100%',         /* scaled to size of container */
-      /* To position text block  to retain circle shape */
-      lineHeight: '0',
-      position: 'relative',
+      width: '100%',      
 
-
-     /*  position: 'absolute',    */
-      top: '0',
+      position: 'absolute',   
+      top: '200px',   /* from 0 */
       left: '0', 
       zIndex: '1'
     },
 
-
-    /* MATCHING HEIGHT for responsive */
-    'timer_circle::after': {
-        content: '',
-        display: 'block',
-        paddingBotton: '100%'
-    },
 
     /* CENTER TEXT IN CIRCLE */
     count_down: {
       position: 'absolute', /* to vertically center */
       bottom: '50%',
       width: '100%',
-      color: 'purple',
-      textAlign: 'center',
-    /*   bottom: '50%', */
-      fontWeight: 'bold',
-  /*     justifyContent: 'center',
-      alignItems: 'center', */
-      zIndex: 2
-    },
 
-
-    /* Outer circle representing border - using conic gradient property as background - with gradient of colour transitions rotated around a center point */
-    /* Appears below */
-    //TODO: Decide on colouring 
-    gradient_outer_circle: {
-      
-      borderRadius: '50%',    // circle
-      
-      // 3 colours - representing breath in, hold, breath out
-      /* Option1: Indicating Hold breath at bottom */
-      /*      background: 'conic-gradient(#ad3b5d86 0% 45%, #f6fce0 45% 55%,  #3badad 55% 100%)', */
-      /* Option 2: Indicating  hold breath at top */
-     /*   background: 'conic-gradient(#f6fce0 0% 5%, #ad3b5d86 5% 50%,  #3badad 50% 95%, #f6fce0 95% 100%)', */
-      /* background: 'conic-gradient(var(--primary-light5) 0% 5%, #ad3b5d86 5% 50%,  var(--primary-dark4) 50% 95%, var(--primary-light5) 95% 100%)', */
-      background: 'conic-gradient(var(--light) 0% 5%, #ad3b5d86 5% 50%,  var(--dark) 50% 95%, var(--medium) 95% 100%)',
-    
-      // background circle/border needs to be slightly larger than circle/container
-      height: '325px',
-      width: '325px',
-
-      // move up and over to left 
-       top: '-12px',
-      left: '-12px', 
-      zIndex: '-1',          //behind main center circle
-      position: 'absolute'    
-    },
-
-    /* Use animations to have moving pointer effect */
-    pointer: {
-
-    },
-
-    /* instructional /prompt text */
-    p: {
+      fontFamily: 'FutoSansBold',
+      fontSize: '50px',
       color: 'white',
-      justifyContent: 'center',
-      alignItems: 'center',
+      textAlign: 'center',
+      fontWeight: 'bold',
       zIndex: 2
     },
-
- 
   
-
-
+    
     startBtn: {
       backgroundColor: '#F08A9B',
       fontFamily: 'FutoSansBold',
@@ -172,14 +118,17 @@ const styles = {
       borderStyle: 'none',
       padding: '16px 40px 16px 40px',
       borderRadius: '10px',
-      marginTop: '30px'
+      marginTop: '30px',
+
+      position: 'absolute',   
+      top: '500px',  
+      left: '90px', 
     },
 
+    /* How to put this inline style object rather than .css file ? */
     'startBtn:hover': {
         backgroundColor: '#d87c8c' 
     }
-
-
 };
 
 
@@ -212,15 +161,9 @@ function PomodoroTimer(props) {
       <>
          <div className='container' style={styles.container}>
 
-
-            <div style={styles.container_timer}>
-                <div className="timer_circle" style={styles.timer_circle}></div>
-               {/* <p id="count_down" style={styles.p}>{duration}</p> */}
-               <div class='count_down'>{duration}</div>
+            <div className="timer_circle" style={styles.timer_circle}>
+                <p className="count_down" style={styles.count_down}>{duration}</p>
             </div>
-
-
-            {/* <p> Temp placeholder for slider showing pss values from {TIME_MIN} mins to {TIME_MAX} mins </p> */}
 
             <input type="button"  style={styles.startBtn} onClick={() => console.log('pomodoro start button clicked')} value="Start"/>
 

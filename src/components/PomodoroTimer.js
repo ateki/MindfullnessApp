@@ -8,106 +8,58 @@ import { useState, useEffect } from 'react';
 //import '../styles/pomodoro.css';
 
 
-/* 
-const styles = {
-
-  container: {
-      position: 'relative',
-      display: 'grid',
-      gridAutoFlow: 'column',
-      gridGap: '20px',
-      top: '200px',
-      margin: '0 auto',
-      gridTemplateRows: '50px 50px 50px 50px 50px ',
-      gridTemplateColumns: '200px 200px ',
-      padding: '10px',
-      justifyContent: 'center',
-      alignItems: 'center'
-
-    },
-    
-    button: {
-      padding: '10px',
-      border: '1px solid black',
-      borderRadius: '5px',
-      width: '100%',
-      height: '100%',
-      cursor: 'pointer',
-      textAlign: 'center'
-    }
-
- 
-}; */
-
-/* 
-
-
-container: {
-  position: 'relative',
-  display: 'grid',
-  gridAutoFlow: 'column',
-  gridGap: '20px',
-  top: '200px',
-  margin: '0 auto',
-  gridTemplateRows: '50px 50px 50px 50px 50px ',
-  gridTemplateColumns: '200px 200px ',
-  padding: '10px',
-  justifyContent: 'center',
-  alignItems: 'center' */
 
 
 const styles = {
 
-  body: {
+/*   body: {
     backgroundImage: 'url("../assets/Landing.png")'
+  }, */
+  wrapper: {
+    display: 'flex',
+    width: '100%',
+    height:'100%',
+/*     top: '200px' */
   },
-   
-  container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '300px',
-      width: '300px',
-      margin: 'auto',   //middle
-     /*  position: 'relative', */
-      transform: 'scale(1)',      // default scaling - used to  grow and shrink
-      textAlign: 'center',
-      marginBottom: '25px',
-      lineHeight: '1.5'
-  },
- 
 
-    /* Solid coloured circle - appears in middle, top element */
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    margin: 'auto'  
+  },
+
+
+ 
+    /* CIRCLE FOR TIMER - transparent*/
+    // flex item
     timer_circle: {
+      display: 'flex',    // container of text
+      justifyContent: 'center',
+      alignItems: 'center',
       
       borderRadius: '50%',     // circle
       backgroundColor: 'rgb(0, 0, 0, 0.1)',
-      border: '2px solid white',
+      border: '5px solid white',
       color: 'white',
-      height: '100%',         
-      width: '100%',      
-
-      position: 'absolute',   
-      top: '200px',   /* from 0 */
-      left: '0', 
+      height: '300px', 
+      width: '300px',
       zIndex: '1'
     },
 
 
     /* CENTER TEXT IN CIRCLE */
     count_down: {
-      position: 'absolute', /* to vertically center */
-      bottom: '50%',
-      width: '100%',
-      color: 'purple',
+      fontFamily: 'FutoSansBold',
+      fontSize: '50px',
+      color: 'white',
       textAlign: 'center',
-    /*   bottom: '50%', */
       fontWeight: 'bold',
-      zIndex: 2
+      zIndex: '2'
     },
-  
-
+ 
    
     startBtn: {
       backgroundColor: '#F08A9B',
@@ -117,15 +69,14 @@ const styles = {
       borderStyle: 'none',
       padding: '16px 40px 16px 40px',
       borderRadius: '10px',
-      marginTop: '30px'
+      marginTop: '30px',
+      width: '50%'
     },
 
-    /* How to put this inline style object rather than .css file ? */
+    /* TODO: Move styles to css file, import and include hover as no inline equivalent. */
     'startBtn:hover': {
         backgroundColor: '#d87c8c' 
     }
-
-
 };
 
 
@@ -155,23 +106,17 @@ function PomodoroTimer(props) {
 
 
     return (
-      <>
+      <div className='wrapper' style={styles.wrapper}>
          <div className='container' style={styles.container}>
 
-
-            <div style={styles.container_timer}>
-                <div className="timer_circle" style={styles.timer_circle}>
-                  <p className="count_down" style={styles.count_down}>{duration}</p>
-                </div>
-               
+            <div className="timer_circle" style={styles.timer_circle}>
+                <p className="count_down" style={styles.count_down}>{duration}</p>
             </div>
 
-
-           
             <input type="button"  style={styles.startBtn} onClick={() => console.log('pomodoro start button clicked')} value="Start"/>
 
         </div> 
-      </>
+      </div>
     )
   }
   

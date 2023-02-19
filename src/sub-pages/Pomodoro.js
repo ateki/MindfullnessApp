@@ -1,4 +1,6 @@
+/* import PomodoroTimer from '../components/PomodoroTimer'; */
 import PomodoroTimer from '../components/PomodoroTimer';
+/* import PomodoroTimer from '../components/PomodoroTimer4'; */
 /* import PomodoroTimer from '../components/PomodoroTimer2'; */
 /* import PomodoroTimer from '../components/PomodoroTimer3'; */
 
@@ -16,20 +18,17 @@ const styles = {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
-        width: '100vw',  // 100% of current viewpoint 
-        height: '100vh' 
+        width: '100vw',  
+        height: '100vh'
     }
 }
 
 function Pomodoro(){
     return(
         <div style={styles.backgroundImg}>
-            <h1><PomodoroTimer/></h1>
+            <PomodoroTimer/>
         </div>
     )
 }
-
-
-
 
 export default Pomodoro
