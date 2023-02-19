@@ -64,74 +64,10 @@
 
 
 @keyframes spin{
-  100% { transform: rotate(-360deg); }
-}
-
-@keyframes rotate{
-  0% { transform: rotate(-360deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* This starts at top instead of bottom and goes too fast */
-@keyframes rotate2{
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
-/* Probably nearest in timing */
-@keyframes spin2{
- /*  100% { transform: rotate(-360deg); } */
-    0%{
-        transform: rotate(90deg);
-    }
-    50%{
-        transform: rotate(180deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-
-}
-
-/* Probably nearest in timing */
-@keyframes spin4{
-
-     0%{
-         transform: rotate(0deg);
-     }
-     50%{
-         transform: rotate(180deg);
-     }
-     100%{
-         transform: rotate(360deg);
-     }
- 
- }
-
-
-
-/* Want to start spin at bottom clockwise */
-
-@keyframes spin3{
-  /*  100% { transform: rotate(-360deg); } */
-     0%{
-         transform: rotate(180deg);
-     }
-     50%{
-         transform: rotate(360deg);
-     }
-     100%{
-         transform: rotate(360deg);
-     }
- 
- }
-
-
-/* 
-@keyframes rotate{
-  from{ transform: rotate(-360deg); }
-  to{ transform: rotate(360deg); }
-} */
 
 
 /** Animations **/
@@ -148,17 +84,6 @@
 }
 
 .progress_circle {
- /*  animation: spin 10s linear forwards infinite; */
-  /* animation: spin2 10s linear forwards infinite; */
-  animation: spin4 10s linear forwards infinite;
-/*   transform-origin: 'bottom center';  */
+  animation: spin 10s linear forwards infinite;
 }
-
-
-
-/* .guide_container {
-  animation: rotate 9s linear forwards infinite;
-  transform-origin: 'bottom center'; 
-}
- */
 

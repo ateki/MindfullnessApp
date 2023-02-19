@@ -81,18 +81,19 @@ const styles = {
       position: 'absolute'    
     },
 
+
+    
+    /* VISUAL INDICATING STAGE OF BREATHING CYCLE */
+    
+    /* FOR SPINNING TRANSPARENT CIRCLE, with 1% white acting as pointer */
+    /* Ptr to start at bottom of circle where breathing cycle starts with breathe in, rotate at origin */
     progress_circle: {
       
-      borderRadius: '50%',    // circle
+      borderRadius: '50%',    
       borderStyle: 'none',
-      // colour would be transparent apart from little bit...how to do that?
-      // 3 colours - representing breath in, hold, breath out
-      /* Option1: Indicating Hold breath at bottom */
-      /*      background: 'conic-gradient(#ad3b5d86 0% 45%, #f6fce0 45% 55%,  #3badad 55% 100%)', */
-      /* Option 2: Indicating  hold breath at top */
-     /*   background: 'conic-gradient(#f6fce0 0% 5%, #ad3b5d86 5% 50%,  #3badad 50% 95%, #f6fce0 95% 100%)', */
-      /* background: 'conic-gradient(var(--primary-light5) 0% 5%, #ad3b5d86 5% 50%,  var(--primary-dark4) 50% 95%, var(--primary-light5) 95% 100%)', */
-      background: 'conic-gradient(white 0% 1%, var(--transparent-color) 1% 100%)',
+
+      // white section starts at bottom of circle 
+      background: 'conic-gradient(var(--transparent-color) 0% 50%, white 50% 51%, var(--transparent-color) 51% 100%)',
     
       // background circle/border needs to be slightly larger than circle/container
       height: '350px',
@@ -106,39 +107,34 @@ const styles = {
     },
 
 
-
-    // should be half of main container and bit
-    guide_container: {
+    /* OTHER POINTER */
+    /*     guide_container: {
       position: 'absolute',
        // start above main breathing bubble top middle
       top: '-40px', 
       left: '140px',
       width: '20px',
       height: '190px',  // container half of breathing bubble
-      /* background: 'red', */
-      /* animation: 'rotate 10s linear  infinite',  */ //too fast
+      //    background: 'red', 
+      // animation: 'rotate 10s linear  infinite',   //too fast
       transformOrigin: 'bottom center',
-
-      zIndex: '11' //TEMP
-      
-    },
+      zIndex: '1' 
+    }, */
 
     /* Visual to indicate where in breathing cycle we are  */
-    guide: {
+/*     guide: {
       backgroundColor: '#fff',
       borderRadius: '50px',
       height: '20px',
       width: '20px',
       display: 'block'
-    },
+    }, */
 
     /* instructional /prompt text */
     p: {
       color: 'white',
       zIndex: 2
     },
-
-  
   };
 
 
@@ -229,7 +225,7 @@ function BreathingBubble(props) {
 
             <p id="text" style={styles.p}>{prompt}</p>
 
-            <div className="guide_container" style={styles.guide_container}><div className="guide" style={styles.guide}></div></div>
+            {/* <div className="guide_container" style={styles.guide_container}><div className="guide" style={styles.guide}></div></div> */}
             
             <div className="gradient_outer_circle" style={styles.gradient_outer_circle}></div>
 
