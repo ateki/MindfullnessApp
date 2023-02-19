@@ -1,0 +1,12 @@
+.controlbutton {
+    color: aquamarine !important;
+}
+
+.controlbutton:hover{
+        color: #fff !important;
+}
+
+.sliderstyle {
+    color: aquamarine !important;
+}
+

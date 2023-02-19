@@ -18,9 +18,9 @@ import '../styles/breathing_bubble.css';
 // TODO: Should we move these now to the imported BreathingBubble.css?  No benefit to be here.
 const styles = {
 
-  body: {
+ /*  body: {
     backgroundImage: 'url("../assets/Cave.png")'
-  },
+  }, */
    
   container: {
     display: 'flex',
