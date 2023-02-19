@@ -36,9 +36,6 @@ function Breathing(){
                 <BreathingBubble/>
             </div>
         </div>
-
-
-
     )
 }
 
