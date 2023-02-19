@@ -1,5 +1,5 @@
 .quoteBackground{
-  background: url("../assets/darkBg.jpg");
+  background: url("../assets/moonBg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -27,7 +27,6 @@ h1{
   
   .quote-div{
     margin-top: .5%;
-    width: 600px;
     margin-left:auto;
     margin-right: auto;
     color: #dce3e5;
