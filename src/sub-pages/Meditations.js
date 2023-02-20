@@ -1,9 +1,16 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import '../styles/meditations.css';
 
 
 
-function Meditations(){
+function Meditations() {
+
+    const navigate = useNavigate();
+
+    const redirect = (id) => {
+        navigate(`/sounds`, {state : {trackid : id}});
+    }
     
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     
@@ -30,10 +37,10 @@ function Meditations(){
             </button>
             {isDropdownOpen && (
                 <div className="dropdown-menu">
-                <button className="dropdown-item">Button 1</button>
-                <button className="dropdown-item">Button 2</button>
-                <button className="dropdown-item">Button 3</button>
-                <button className="dropdown-item">Button 4</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 1</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 2</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 3</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 4</button>
                 </div>
                 )}
             </div>
@@ -43,10 +50,10 @@ function Meditations(){
             </button>
             {isDropdownOpen2 && (
                 <div className="dropdown-menu">
-                <button className="dropdown-item">Button 1</button>
-                <button className="dropdown-item">Button 2</button>
-                <button className="dropdown-item">Button 3</button>
-                <button className="dropdown-item">Button 4</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=cusA8wYBZKU')}>Button 1</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 2</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 3</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 4</button>
                 </div>
                 )}
             </div>
@@ -56,10 +63,10 @@ function Meditations(){
             </button>
             {isDropdownOpen3 && (
                 <div className="dropdown-menu">
-                <button className="dropdown-item">Button 1</button>
-                <button className="dropdown-item">Button 2</button>
-                <button className="dropdown-item">Button 3</button>
-                <button className="dropdown-item">Button 4</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 1</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 2</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 3</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 4</button>
                 </div>
                 )}
             </div>
@@ -69,7 +76,3 @@ function Meditations(){
 }
 
 export default Meditations;
-
-
-
-
