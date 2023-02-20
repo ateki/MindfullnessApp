@@ -13,7 +13,7 @@ function Quotes() {
   
     return (
         <div className="q-container quoteBackground">
-        <h1>Quote of the Day</h1>
+        <h1 className ="quoteH1">Quote of the Day</h1>
         <div className="quote-div" >
           <p className="quote">"{randomQuote.quote}"</p>
           <p className="author">- {randomQuote.author}</p>
