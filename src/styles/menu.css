@@ -6,6 +6,8 @@
     background-size: cover;
     height: 250vh;
     width: 100vw;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 .menuIconsContainer{
@@ -13,9 +15,13 @@
     justify-content: center;
     width: 100%;
     flex-wrap: wrap;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 .menuIcon1{
     margin: 10px 10px 10px 10px;
+    width: 300px;
+        height: auto;
 }
 .menuIcon1:hover{
     margin: 10px 10px 10px 10px;
@@ -23,6 +29,8 @@
 }
 .menuIcon2{
     margin: 10px 10px 10px 10px;
+    width: 300px;
+        height: auto;
 }
 .menuIcon2:hover{
     margin: 10px 10px 10px 10px;
@@ -33,6 +41,8 @@
     margin: 10px 10px 10px 10px;
     position: relative;
     top: 17px;
+    width: 300px;
+        height: auto;
 }
 .menuIcon3:hover{
     margin: 10px 10px 10px 10px;
@@ -41,16 +51,71 @@
 
 .menuIcon4{
     margin: 10px 10px 10px 10px;
+    width: 300px;
+        height: auto;
 }
 .menuIcon4:hover{
     margin: 10px 10px 10px 10px;
     opacity: 0.8;
 }
 
-/* @media only screen and (max-width: 400px) {
+@media only screen and (max-width: 430px) {
+    .menuBackground{
+        background: url("../assets/LandingPage.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 250vh;
+        width: 100vw;
+    }
+    
     .menuIconsContainer{
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        width: 100%;
+        flex-wrap: wrap;
+        position: relative;
+        top: 140px;
     }
-  } */
+    .menuIcon1{
+        margin: 10px 10px 10px 10px;
+        width: 50%;
+        height: auto;
+    }
+    .menuIcon1:hover{
+        margin: 10px 10px 10px 10px;
+        opacity: 0.8;
+    }
+    .menuIcon2{
+        margin: 10px 10px 10px 10px;
+        width: 50%;
+        height: auto;
+    }
+    .menuIcon2:hover{
+        margin: 10px 10px 10px 10px;
+        opacity: 0.8;
+    }
+    
+    .menuIcon3{
+        margin: 10px 10px 10px 10px;
+        position: relative;
+        top: 17px;
+        width: 50%;
+        height: auto;
+    }
+    .menuIcon3:hover{
+        margin: 10px 10px 10px 10px;
+        opacity: 0.8;
+    }
+    
+    .menuIcon4{
+        margin: 10px 10px 10px 10px;
+        width: 50%;
+        height: auto;
+    }
+    .menuIcon4:hover{
+        margin: 10px 10px 10px 10px;
+        opacity: 0.8;
+    }
+  }
