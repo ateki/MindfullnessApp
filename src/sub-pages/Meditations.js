@@ -3,15 +3,64 @@ import { useNavigate } from "react-router-dom";
 import '../styles/meditations.css';
 
 
+let i;
+let j;
+let k;
 
 function Meditations() {
-
+    
     const navigate = useNavigate();
-
+    
+    
     const redirect = (id) => {
         navigate(`/sounds`, {state : {trackid : id}});
     }
     
+    const [style, setStyle] = useState("dropdown-toggle");
+    
+
+    const changeStyle = () => {
+        if (i === 1) {
+            setStyle("dropdown-toggle");
+            i = 0;
+        }
+        else {
+            setStyle("dropdown-toggle2");
+            i = 1;
+            }
+
+    };
+
+    const [style2, setStyle2] = useState("dropdown-toggle3");
+    
+
+    const changeStyle2 = () => {
+        if (j === 1) {
+            setStyle2("dropdown-toggle3");
+            j = 0;
+        }
+        else {
+            setStyle2("dropdown-toggle4");
+            j = 1;
+            }
+
+    };
+
+    const [style3, setStyle3] = useState("dropdown-toggle5");
+
+    const changeStyle3 = () => {
+        if (k === 1) {
+            setStyle3("dropdown-toggle5");
+            k = 0;
+        }
+        else {
+            setStyle3("dropdown-toggle6");
+            k = 1;
+            }
+
+    };
+    
+
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     
     const toggleDropdown = () => {
@@ -29,10 +78,10 @@ function Meditations() {
       };
 
     return(
-    <>
+    <div className="meditationsBackground">
         <div className="dropdownContainer">
             <div className="dropdown">
-            <button className="dropdown-toggle" onClick={toggleDropdown}>
+            <button className={style} onClick={() => {toggleDropdown(); changeStyle()}}>
                 Dropdown Menu
             </button>
             {isDropdownOpen && (
@@ -45,7 +94,7 @@ function Meditations() {
                 )}
             </div>
             <div className="dropdown">
-            <button className="dropdown-toggle" onClick={toggleDropdown2}>
+            <button className={style2} onClick={() => {toggleDropdown2(); changeStyle2()}}>
                 Dropdown Menu
             </button>
             {isDropdownOpen2 && (
@@ -58,7 +107,7 @@ function Meditations() {
                 )}
             </div>
             <div className="dropdown">
-            <button className="dropdown-toggle" onClick={toggleDropdown3}>
+            <button className={style3} onClick={() => {toggleDropdown3(); changeStyle3()}}>
                 Dropdown Menu
             </button>
             {isDropdownOpen3 && (
@@ -71,7 +120,7 @@ function Meditations() {
                 )}
             </div>
         </div>
-    </>
+    </div>
     )
 }
 
