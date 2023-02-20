@@ -8,6 +8,7 @@
 // or */
 /* import { Slider } from '@mui/material'; */
 
+import e from 'express';
 import { useState, useEffect } from 'react';
 //import '../styles/pomodoro.css';
 
@@ -120,16 +121,15 @@ const marks = [
  * @param {*} props 
  * @returns html representing breathing bubble - visually shows different stages of breathing cycle
  */
-function PomodoroTimer(props) {
-  const [minsLeft, setMinsLeft] = useState(5);  
-  const [secsLeft, setSecsLeft] = useState(0); 
-
-/*     const testTime = 5; // 5 mins
-
-    const sessionDurationMins = 5; // hardcode for now but will come from slider
-    
-    
-    const [durationInMins, setDurationInMins] = useState(sessionDurationMins);  // time in minutes
+function PomodoroTimerNew(props) {
+  
+    /*   const [minsLeft, setMinsLeft] = useState(5);  // test time
+      const [secsLeft, setSecsLeft] = useState(0); 
+    */
+    /* const sessionDurationMins = 5; // Incoming data...hardcode for now but will come from slider */
+ 
+/*     
+    const [durationInMins, setDurationInMins] = useState(5);  // time in minutes
     const [durationInMs, setDurationInMs] = useState(60000 * {durationInMins});  // time in milliseconds
     
    
@@ -139,38 +139,12 @@ function PomodoroTimer(props) {
 
     /* const [timeLeft, setTimeLeft] = useState({durationInMins}); */
 
+ 
 
- /*    var timeout = setTimeout(function() {}, 3600 * 1000);
-
-    setInterval(function() {
-        console.log('Time left: '+getTimeLeft(timeout)+'s');
-    }, 2000);
-
-    function getTimeLeft(timeout) {
-        return Math.ceil((timeout._idleStart + timeout._idleTimeout - Date.now()) / 1000);
-    }
-
- */
-
-/*     
-    useEffect(() => {
+    
 
 
-      // Continue breathing cycles - animation runs every totalCycleTime
-      const intervalId = setInterval(() => {
 
-          //..setMinsLeft  setSecsLeft
-
-      }, durationInMs); //setInterval
-
-  
-
-      // Clear interval and avoid memory leak
-      // How? modify useEffect() hook to return function that calls clearInterva()
-      return () => clearInterval(intervalId);
-  }, []);
-
- */
 
    
 
@@ -188,7 +162,8 @@ function PomodoroTimer(props) {
          <div className='container' style={styles.container}>
 
             <div className="timer_circle" style={styles.timer_circle}>
-                <p className="count_down" style={styles.count_down}>{minsLeft}:{secsLeft}</p>
+                {/* <p className="count_down" style={styles.count_down}>{minsLeft}:{secsLeft}</p> */}
+                <p className="count_down" style={styles.count_down}>TimeLeft is 10</p>
             </div>
 
               {/* TODO: Add slider */}
@@ -209,4 +184,4 @@ function PomodoroTimer(props) {
     )
   }
   
-  export default PomodoroTimer;
+  export default PomodoroTimerNew;

@@ -11,7 +11,7 @@
 import { useState, useEffect } from 'react';
 //import '../styles/pomodoro.css';
 
-
+import DigitalDisplay from '../components/DigitalDisplay';
 
 
 const styles = {
@@ -106,81 +106,76 @@ const marks = [
 ];
 
 
-/* function valuetext(value: number) {
-  return `${value}°C`;
-} */
+
+
 /**
- * The below visually replicates inhale,hold,exhale breath: where change in breathing is timed and stage of
- * breathing is displayed in a prompt message.
+ * Returns string representing time in format: mm : ss
+ * Paddiing out any single digit ensuring mins or secs passed in are always displayed as 2 digits
+ * ( 01 : 00,   12 : 03)
+ * Ensures text stays on same position
+ * @param {*} mins 
+ * @param {*} secs 
+ * @returns 
+ */
+const formatTimeLeft = (mins, secs) => {
+  var mm = String(mins).padStart(2,'0');
+  var ss = String(secs).padStart(2,'0');
+  console.log(`formatTimeLeft returns ${mm} : ${ss}`);
+
+  return(`${mm} : ${ss}`);
+} 
+
+
+/**
  * 
- * NOTE: Currently the below has 2 concerns:
- * Use of utility functions did not appear to work.  usePrompt, useState, useEffect only seemed to work when called
- * directly in the React component function, not from a utility function.
- * TODO: Break down the above code in utility function/s but need to use REACT hooks effect and state from below
  * @param {*} props 
- * @returns html representing breathing bubble - visually shows different stages of breathing cycle
+ * @returns 
  */
-function PomodoroTimer(props) {
-  const [minsLeft, setMinsLeft] = useState(5);  
-  const [secsLeft, setSecsLeft] = useState(0); 
-
-/*     const testTime = 5; // 5 mins
-
-    const sessionDurationMins = 5; // hardcode for now but will come from slider
-    
-    
-    const [durationInMins, setDurationInMins] = useState(sessionDurationMins);  // time in minutes
-    const [durationInMs, setDurationInMs] = useState(60000 * {durationInMins});  // time in milliseconds
-    
-   
-    // Time remaining - to be displayed on timer
-    const [minsLeft, setMinsLeft] = useState({durationInMins});  
-    const [secsLeft, setSecsLeft] = useState(0); */
-
-    /* const [timeLeft, setTimeLeft] = useState({durationInMins}); */
+//TODO Slider added and pass time set to countdown
+// TODO Attempted to have DigitalTime Display but ggetting error too many re-renders.
+function PomodoroTimer1(props) {
 
 
- /*    var timeout = setTimeout(function() {}, 3600 * 1000);
-
-    setInterval(function() {
-        console.log('Time left: '+getTimeLeft(timeout)+'s');
-    }, 2000);
-
-    function getTimeLeft(timeout) {
-        return Math.ceil((timeout._idleStart + timeout._idleTimeout - Date.now()) / 1000);
-    }
-
- */
-
-/*     
-    useEffect(() => {
-
-
-      // Continue breathing cycles - animation runs every totalCycleTime
-      const intervalId = setInterval(() => {
-
-          //..setMinsLeft  setSecsLeft
-
-      }, durationInMs); //setInterval
-
+  // Initial starting time
+  const [durationInMins, setDurationInMins] = useState(1);                   // time in minutes
+  const [durationInMs, setDurationInMs] = useState(60000 * durationInMins);  // time in milliseconds
   
 
-      // Clear interval and avoid memory leak
-      // How? modify useEffect() hook to return function that calls clearInterva()
-      return () => clearInterval(intervalId);
-  }, []);
+  // Time remaining 
+  const [minsLeft, setMinsLeft] = useState(durationInMins);  
+  const [secsLeft, setSecsLeft] = useState(0); 
+  
+  const [countdownDisplay, setCountdownDisplay] = useState(null); 
 
- */
 
-   
 
-/*     useEffect(() => {
-      //Runs on the first render
-      //And any time any dependency value changes
 
-      // timeout works on millisecs
-      // not every sec/min change
-    }, [minsLeft, secsLeft]); */
+  //TODO rename updateTimeLeft
+  const recordTimeLeft  = () => {
+        console.log(`recordTimeLeft    ${minsLeft}: ${secsLeft}`);
+
+        if (secsLeft>0)  {
+          // reduce seconds
+          setSecsLeft(secsLeft-1);
+        } else if (minsLeft>0 && secsLeft==0) {
+          setMinsLeft(minsLeft-1);
+          setSecsLeft(59);
+        } 
+        // else reached zero
+  }
+
+
+  useEffect(() => {
+      console.log(`first time ${secsLeft}  ${minsLeft}`);
+
+        const timeout = setTimeout(() => {
+          recordTimeLeft(); 
+          setCountdownDisplay(formatTimeLeft(minsLeft, secsLeft)); 
+
+    }, 1000); //  every sec update display
+
+  }, [secsLeft]);  // dependency array - any data changed then execute the callback function
+
 
 
     return (
@@ -188,7 +183,8 @@ function PomodoroTimer(props) {
          <div className='container' style={styles.container}>
 
             <div className="timer_circle" style={styles.timer_circle}>
-                <p className="count_down" style={styles.count_down}>{minsLeft}:{secsLeft}</p>
+                <p className="count_down" style={styles.count_down}>{countdownDisplay}</p> 
+                {/* <DigitalDisplay mins={minsLeft} secs={secsLeft}/> */}
             </div>
 
               {/* TODO: Add slider */}
@@ -209,4 +205,4 @@ function PomodoroTimer(props) {
     )
   }
   
-  export default PomodoroTimer;
+  export default PomodoroTimer1;
