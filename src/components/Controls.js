@@ -75,7 +75,7 @@ const Controls = forwardRef(
         <Grid
           container
           direction="column"
-          justify="space-between"
+          justifyContent="space-between"
           style={{ flexGrow: 1 }}
         >
           <Grid

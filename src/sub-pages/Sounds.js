@@ -2,6 +2,7 @@ import React, { useState, useRef} from "react";
 import Container from "@material-ui/core/Container";
 import ReactPlayer from "react-player";
 import Controls from "../components/Controls";
+import '../styles/sounds.css';
 
 const format = (seconds) => {
   if (isNaN(seconds)) {
@@ -117,7 +118,10 @@ function Sounds() {
 
   return (
     <>
-      <Container maxWidth="md">
+    <div className="soundsBackground">
+      <div className="soundsImage"></div>
+      <div className="soundBarBackground"></div>
+      <Container maxWidth="md" className="soundBar">
         <div
           ref={playerContainerRef}
          
@@ -153,6 +157,7 @@ function Sounds() {
           />
         </div>
       </Container>
+    </div>
     </>
   );
 }
