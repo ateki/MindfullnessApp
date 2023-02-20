@@ -1,0 +1,24 @@
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    width: 80vw;
+    height: 15vh;
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    width: 80vw;
+    height: 5vh;
+}
+
+.dropdownContainer {
+    margin-top: 15vh;
+}
