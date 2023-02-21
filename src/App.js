@@ -1,4 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons' 
 
 
 import Header from './components/Header'
@@ -14,6 +17,8 @@ import Pomodoro from './sub-pages/Pomodoro'
 import Meditations from './sub-pages/Meditations'
 import Sounds from './sub-pages/Sounds'
 import Quotes from './sub-pages/Quotes'
+library.add(fab, faFacebookF);
+
 
 
 function App() {

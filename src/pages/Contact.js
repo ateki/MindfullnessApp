@@ -1,28 +1,41 @@
-import {useState} from 'react';
+// import {useState} from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../styles/contact.css'
+
 
 function Contact(){
 
-    const [userName, setUserName] = useState('');
-
     const handleSubmit = event => {
         event.preventDefault()
-        setUserName('')
     }
     return (
         <>
         <div className="contactBg div-wrapper">
 
             <div className="background-div">
-                <h3 className="form-h3">Let's Get in Touch</h3>
+                <h2 className="form-h2">Let's Get in Touch</h2>
 
                 <form onSubmit={handleSubmit} >
-                    <input value={userName} type="text" placeholder="Name" />
-                    {/* add to value prop to input and set it to userName so it can be referenced above to clear the inputted search */}
+                    <input type="text" placeholder="Name" />
                     <input  placeholder="Email Address" />
                     <textarea placeholder="Enter Your Message" cols="30" rows="10" ></textarea>
                     <button className="f-btn" >Submit</button>
                 </form>
+
+                <div className="icon-div">
+                    <a href="https://www.facebook.com/">
+                        <FontAwesomeIcon className="icon fb" icon="fa-brands fa-facebook-f" size="lg"/>
+                    </a>
+                    <a href="https://instagram.com/">
+                        <FontAwesomeIcon className="icon ig" icon="fa-brands fa-instagram" size="lg" />
+                    </a>
+                    <a href="https://twitter.com/">
+                        <FontAwesomeIcon className="icon tw" icon="fa-brands fa-twitter" size="lg"/>
+                    </a>
+                    <a href="https://linkedin.com/">
+                        <FontAwesomeIcon className="icon in" icon="fa-brands fa-linkedin-in" size="lg"/>
+                    </a> 
+                </div>
             </div>
         </div>
         </>
