@@ -1,0 +1,35 @@
+.soundsBackground{
+    background: url("../assets/moonBg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.soundBarBackground{
+    position: absolute;
+    background: #053247;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 25vh;
+    width: 100vw;
+    margin-top: 75vh;
+}
+
+.soundsImage{
+    position: fixed;
+    background: url("../assets/MeditatingWoman.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    height: 85%;
+    width: 100%;
+}
+
+.soundBar{
+    padding-top: 53vh;
+}

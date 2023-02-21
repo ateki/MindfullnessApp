@@ -2,6 +2,8 @@ import React, { useState, useRef} from "react";
 import Container from "@material-ui/core/Container";
 import ReactPlayer from "react-player";
 import Controls from "../components/Controls";
+import { useLocation } from "react-router-dom";
+import '../styles/sounds.css';
 
 const format = (seconds) => {
   if (isNaN(seconds)) {
@@ -20,6 +22,7 @@ const format = (seconds) => {
 let count = 0;
 
 function Sounds() {
+  const trackid = useLocation();
   const [timeDisplayFormat, setTimeDisplayFormat] = React.useState("normal");
   const [state, setState] = useState({
     pip: false,
@@ -117,7 +120,10 @@ function Sounds() {
 
   return (
     <>
-      <Container maxWidth="md">
+    <div className="soundsBackground">
+      <div className="soundsImage"></div>
+      <div className="soundBarBackground"></div>
+      <Container maxWidth="md" className="soundBar">
         <div
           ref={playerContainerRef}
          
@@ -126,7 +132,7 @@ function Sounds() {
             ref={playerRef}
             width="0%"
             height="0.1%"
-            url="https://www.youtube.com/watch?v=Cj2eUpt3MVE"
+            url={trackid.state.trackid}
             playing={playing}
             volume={volume}
             muted={muted}
@@ -153,6 +159,7 @@ function Sounds() {
           />
         </div>
       </Container>
+    </div>
     </>
   );
 }
