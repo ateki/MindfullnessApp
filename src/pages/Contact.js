@@ -5,19 +5,25 @@ function Contact(){
 
     const [userName, setUserName] = useState('');
 
+    const handleSubmit = event => {
+        event.preventDefault()
+        setUserName('')
+    }
     return (
         <>
-        <div className="contactBg contact-wrapper" >
-        <h2>Contact Us</h2>
+        <div className="contactBg div-wrapper">
 
-        <form onSubmit={handleSubmit} >
-            <input value={userName} type="text" placeholder="Enter Your Name" />
-            {/* add to value prop to input and set it to userName so it can be referenced above to clear the inputted search */}
-            <input value="email" type="text" placeholder="Enter Email Address" />
-            <textarea value="message" type="text" placeholder="Enter Message"></textarea>
+            <div className="background-div">
+                <h3 className="form-h3">Let's Get in Touch</h3>
 
-            <button>Submit</button>
-        </form>
+                <form onSubmit={handleSubmit} >
+                    <input value={userName} type="text" placeholder="Name" />
+                    {/* add to value prop to input and set it to userName so it can be referenced above to clear the inputted search */}
+                    <input  placeholder="Email Address" />
+                    <textarea placeholder="Enter Your Message" cols="30" rows="10" ></textarea>
+                    <button className="f-btn" >Submit</button>
+                </form>
+            </div>
         </div>
         </>
     )
