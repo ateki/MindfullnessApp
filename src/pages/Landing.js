@@ -45,7 +45,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/menu">
           <button className="landingButton">Start the Journey</button>
+          </a>
         </div>
       </div>
 
@@ -63,7 +65,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/Meditations">
           <button className="landingButton">Start the Journey</button>
+          </a>
         </div>
       </div>
 
@@ -81,7 +85,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/Breathing">
           <button className="landingButton">Start the Journey</button>
+          </a>
           <img className="meditatingMan" src={man}></img>
         </div>
       </div>
@@ -100,7 +106,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/Quotes">
           <button className="landingButton">Start the Journey</button>
+          </a>
         </div>
       </div>
 
