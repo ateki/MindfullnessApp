@@ -14,6 +14,7 @@ import Pomodoro from './sub-pages/Pomodoro'
 import Meditations from './sub-pages/Meditations'
 import Sounds from './sub-pages/Sounds'
 import Quotes from './sub-pages/Quotes'
+import Music from './sub-pages/Music';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/breathing" element={<Breathing/>} />
       <Route path="/pomodoro" element={<Pomodoro/>} />
       <Route path="/meditations" element={<Meditations/>} />
+      <Route path="/music" element={<Music/>} />
       <Route path="/sounds" element={<Sounds/>} />
       <Route path="/quotes" element={<Quotes/>} />
 
