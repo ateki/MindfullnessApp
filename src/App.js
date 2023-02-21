@@ -2,6 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 
 
 import Header from './components/Header'
+import BurgerMenu from "./components/BurgerHeader"
 
 import Landing from './pages/Landing'
 import Menu from './pages/Menu'
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
     <Header />
+<BurgerMenu />
       <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/menu" element={<Menu/>} />
