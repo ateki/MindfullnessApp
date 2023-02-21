@@ -261,14 +261,14 @@ function PomodoroTimerOnStart(props) {
               (!isTimerRunning && timeLeft < TEST_DURATION)
               ? 
               (
-                  <input type="button" value="Reset" style={styles.ctrlBtn} disabled={!isTimerRunning} 
+                  <input type="button" value="Reset" style={styles.ctrlBtn} 
                       onClick={() => resetTimer()
                   }/>
               )
               : 
              
               (
-                <input type="button" value="Reset" style={styles.ctrlBtnHidden} disabled={!isTimerRunning} 
+                <input type="button" value="HiddenReset" style={styles.ctrlBtnHidden} 
                     onClick={() => resetTimer()
                 }/>
             )
