@@ -112,6 +112,26 @@ function Landing() {
         </div>
       </div>
 
+      <div className="landingBackground5">
+        <div className="textContainer">
+          <h1 className="mainTitle">FOCUS</h1>
+          <div className="bodyText">
+            Start a focus session now to help concentration and see your productivity rise.
+                   {/*  Make use of our pomodoro tool to aid productivity. */}
+          {/*   Start a focus session for that uninterrupted concentration to aid productivity.
+          */}
+  
+            With our pomodoro tool, plan short cycles of dedicated, uninterrupted time on a chosen task.
+
+            See improvements in concentration and productivity with this simple, proven technique.
+
+          </div>
+          <a href="/Pomodoro">
+          <button className="landingButton">Start the Journey</button>
+          </a>
+        </div>
+      </div>
+      
       <h1>Daily Journal</h1>
       <JournalForm addEntry={addEntry} />
       <JournalList entries={entries} /> 
