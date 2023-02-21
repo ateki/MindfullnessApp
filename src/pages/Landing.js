@@ -45,7 +45,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/menu">
           <button className="landingButton">Start the Journey</button>
+          </a>
         </div>
       </div>
 
@@ -63,7 +65,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/Meditations">
           <button className="landingButton">Start the Journey</button>
+          </a>
         </div>
       </div>
 
@@ -72,10 +76,12 @@ function Landing() {
           <h1 className="mainTitle">BREATHE</h1>
           <div className="bodyText">
             Feel the power of deep, mindful breathing.   Calm the mind... calm the body...
-            find the peace you crave with long deep breathing.
-            Visualise you breath with our breathing bubble to help find the CALM you deserve.
+            find the peace you crave with long, deep breathing.
+            Visualise your breath with our breathing bubble to help find the CALM you deserve.
             </div>
+          <a href="/Breathing">
           <button className="landingButton">Start the Journey</button>
+          </a>
           <img className="meditatingMan" src={man}></img>
         </div>
       </div>
@@ -94,7 +100,9 @@ function Landing() {
             voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
+          <a href="/Quotes">
           <button className="landingButton">Start the Journey</button>
+          </a>
         </div>
       </div>
 

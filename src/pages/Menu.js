@@ -91,10 +91,22 @@ function Menu(){
         <div className="menuBackground">
   
             <div className="menuIconsContainer">
-                <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
-                <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
+                <div className="iconContainer">
+                    <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
+                    <p className="iconText" >Pomodoro</p>
+                </div>
+                <div className="iconContainer">
+                    <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
+                    <p className="iconText">Breathe</p>
+                </div>
+                <div className="iconContainer">
                 <img className="menuIcon3" src={MeditationIcon} onClick={() => navigate(`/Meditations`)}></img>
+                <p className="iconText iconText3">Meditate</p>
+                </div>
+                <div className="iconContainer">
                 <img className="menuIcon4" src={QuoteIcon} onClick={() => navigate(`/Quotes`)}></img>
+                <p className="iconText">Quotes</p>
+                </div>
             </div>
   
             <div className='menu_options_container' style={styles.container}>
