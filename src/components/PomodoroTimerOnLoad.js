@@ -8,10 +8,12 @@
 // or */
 /* import { Slider } from '@mui/material'; */
 
+import Slider from "@material-ui/core/Slider";
+
 import { useState, useEffect } from 'react';
 //import '../styles/pomodoro.css';
 
-import DigitalDisplay from '../components/DigitalDisplay';
+import DigitalDisplay from './DigitalDisplay';
 
 
 const styles = {
@@ -137,40 +139,76 @@ function PomodoroTimer(props) {
 
 
   // Initial starting time
-  const [durationInMins, setDurationInMins] = useState(1);                   // time in minutes
+  const [durationInMins, setDurationInMins] = useState(0);                   // time in minutes
   const [durationInMs, setDurationInMs] = useState(60000 * durationInMins);  // time in milliseconds
   
   // Time remaining 
   const [minsLeft, setMinsLeft] = useState(durationInMins);  
-  const [secsLeft, setSecsLeft] = useState(0); 
+  const [secsLeft, setSecsLeft] = useState(5); 
   
   const [countdownDisplay, setCountdownDisplay] = useState(null); 
 
 
   
-  const updateTimeLeft  = () => {
+/*   const updateTimeLeft  = () => {
 
         if (secsLeft>0)  {
-          setSecsLeft(secsLeft-1);
-        } else if (minsLeft>0 && secsLeft==0) {
+          setSecsLeft(secsLeft-1); // setSecsLeft(secsLeft => secSecsLeft -1) callback version get updated value and -1
+        } else if (minsLeft>0 && secsLeft===0) {
           setMinsLeft(minsLeft-1);
           setSecsLeft(59);
         } 
         // else reached zero
-  }
+  } */
 
 
+
+// use secret second mode
+  const updateTimeLeft  = () => {
+    console.log(`1)------------------secsLeft = ${secsLeft}  minsLeft = ${minsLeft}`);
+
+    if (minsLeft>0 && secsLeft===0) {
+      setMinsLeft( minsLeft-1);
+      setSecsLeft(59);
+
+    } else if (secsLeft>0)  {
+      setSecsLeft(secsLeft-1)
+    } 
+    // TODO time ended
+    // display message?  Break time - sound an alarm for x seconds or have popup modal where can end alarm
+    
+    console.log(`2)------------------secsLeft = ${secsLeft}  minsLeft = ${minsLeft}`);
+}
+
+
+//TODO Use timeout or interval?  works before buttons added - auto start but slight delay before ..
+// but npothing shown...
+// if coment out call to update before setINterval works
+
+/*   // Option1: setInterval 
   useEffect(() => {
-      console.log(`first time ${secsLeft}  ${minsLeft}`);
-
-        const timeout = setTimeout(() => {
+      console.log(`first time ${minsLeft} : ${secsLeft}  `);
+ 
+        const interval = setInterval(() => {
+            clearInterval(interval);
             updateTimeLeft(); 
             setCountdownDisplay(formatTimeLeft(minsLeft, secsLeft)); 
 
     }, 1000); //  every sec update display
 
   }, [secsLeft]);  // dependency array - any data changed then execute the callback function
+ */
+  
+  // Option1: setTimeout 
+  useEffect(() => {
+    console.log(`first time ${minsLeft} : ${secsLeft}  `);
+        const timeout = setTimeout(() =>  {
+          updateTimeLeft(); 
+          setCountdownDisplay(formatTimeLeft(minsLeft, secsLeft)); 
 
+  }, 1000); //  every sec update display
+
+}, [secsLeft]);  // dependency array - any data changed then execute the callback function
 
 
     return (
@@ -182,19 +220,8 @@ function PomodoroTimer(props) {
                 {/* <DigitalDisplay mins={minsLeft} secs={secsLeft}/> */}
             </div>
 
-              {/* TODO: Add slider */}
-{/*             <Slider
-              aria-label="Always visible"
-              defaultValue={80}
-              getAriaValueText={valuetext}
-              step={10}
-              marks={marks}
-              valueLabelDisplay="on"
-            /> */}
-
-
-            <input type="button"  style={styles.startBtn} onClick={() => console.log('pomodoro start button clicked')} value="Start"/>
-
+   {/*          <input type="button"  style={styles.startBtn} onClick={() => console.log('pomodoro start button clicked')} value="Start"/>
+ */}
         </div> 
       </div>
     )

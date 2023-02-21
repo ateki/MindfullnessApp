@@ -1,4 +1,5 @@
-import PomodoroTimer from '../components/PomodoroTimer';
+/* import PomodoroTimer from '../components/PomodoroTimerOnLoad'; */ // on page load
+import PomodoroTimer from '../components/PomodoroTimerOnStart';
 
 import imgBg from '../assets/LandingPage.png';
 
@@ -25,7 +26,8 @@ const styles = {
 function Pomodoro(){
     return(
         <div style={styles.backgroundImg}>
-            <PomodoroTimer/>
+            <PomodoroTimer/> 
+            {/* Include settings if showSettings selected */}
         </div>
     )
 }

@@ -126,3 +126,10 @@ nav a:not(:last-child) {
   top: -11px;
 }
 
+.test{
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+  position: relative;
+  color: #fff;
+}
