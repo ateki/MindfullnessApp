@@ -116,9 +116,9 @@ const Controls = forwardRef(
                   className='controlbutton'
                 >
                   {playing ? (
-                    <PauseIcon fontSize="large" />
+                    <PauseIcon className="playPauseCircle" fontSize="large" />
                   ) : (
-                    <PlayArrowIcon fontSize="large" />
+                    <PlayArrowIcon className="playPauseCircle" fontSize="large" />
                   )}
                 </IconButton>
 

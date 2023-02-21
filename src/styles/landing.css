@@ -79,18 +79,18 @@
 .meditatingMan{
     position: absolute;
     margin-left: 35%;
-    animation: MoveUpDown 13s linear infinite;
+    animation: MoveUpDown2 13s linear infinite;
     position: absolute;
     bottom: -100px;
 }
 
   
-  @keyframes MoveUpDown {
+  @keyframes MoveUpDown2 {
     0%, 100% {
       bottom: -160px;
     }
     50% {
-      bottom: -80px;
+      bottom: -0px;
     }
   }
 

@@ -8,6 +8,7 @@
     width: 100vw;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
+    
 }
 
 .menuIconsContainer{
@@ -17,6 +18,8 @@
     flex-wrap: wrap;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
+    position: relative;
+    top: 200px;
 }
 .menuIcon1{
     margin: 10px 10px 10px 10px;
