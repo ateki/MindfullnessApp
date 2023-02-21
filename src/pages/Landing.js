@@ -73,7 +73,7 @@ function Landing() {
           <div className="bodyText">
             Feel the power of deep, mindful breathing.   Calm the mind... calm the body...
             find the peace you crave with long deep breathing.
-            Visualise you breath with our breathing bubble to help find the CALM you deserve
+            Visualise you breath with our breathing bubble to help find the CALM you deserve.
             </div>
           <button className="landingButton">Start the Journey</button>
           <img className="meditatingMan" src={man}></img>
