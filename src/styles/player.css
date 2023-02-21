@@ -1,5 +1,6 @@
 .controlbutton {
-    color: #31d2dc !important;
+    color: #ffffff !important;
+    
 }
 
 .controlbutton:hover{
@@ -7,6 +8,11 @@
 }
 
 .sliderstyle {
-    color: #31d2dc !important;
+    color: #ffffff !important;
 }
 
+.playPauseCircle{
+    background-color: #12CDD4;
+    border-radius: 50px;
+    padding: 10px;
+}

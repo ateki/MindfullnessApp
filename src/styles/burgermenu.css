@@ -1,0 +1,28 @@
+.burger-menu{
+    position: fixed;
+    z-index: 3;
+}
+
+
+.burger-menu-button{
+    width: 100px;
+}
+
+.burger-menu-list{
+    z-index: 3;
+    background-color: grey;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-family: FutoSansBold;
+    color: black;
+    text-decoration: none;
+}
+
+.burger-menu-list a{
+   
+    font-family: FutoSansBold;
+    color: black;
+    text-decoration: none;
+    margin: 20px 0px 20px 0px;
+}

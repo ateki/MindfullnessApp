@@ -36,13 +36,13 @@ function Landing() {
           <h1 className="mainTitle">MINDFULL</h1>
           <div className="bodyText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod<br></br>
+            eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            <br></br>
+            
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea<br></br>
+            ea
             commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate<br></br>
+            voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
           <button className="landingButton">Start the Journey</button>
@@ -54,13 +54,13 @@ function Landing() {
           <h1 className="mainTitle">MEDITATE</h1>
           <div className="bodyText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod<br></br>
+            eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            <br></br>
+            
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea<br></br>
+            ea
             commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate<br></br>
+            voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
           <button className="landingButton">Start the Journey</button>
@@ -72,13 +72,13 @@ function Landing() {
           <h1 className="mainTitle">BREATHE</h1>
           <div className="bodyText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod<br></br>
+            eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            <br></br>
+            
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea<br></br>
+            ea
             commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate<br></br>
+            voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
           <button className="landingButton">Start the Journey</button>
@@ -91,20 +91,22 @@ function Landing() {
           <h1 className="mainTitle">QUOTES</h1>
           <div className="bodyText">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod<br></br>
+            eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            <br></br>
+            
             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea<br></br>
+            ea
             commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate<br></br>
+            voluptate
             velit esse cillum dolore eu fugiat nulla pariatur.
           </div>
           <button className="landingButton">Start the Journey</button>
         </div>
       </div>
 
-
+      <h1>Daily Journal</h1>
+      <JournalForm addEntry={addEntry} />
+      <JournalList entries={entries} /> 
 
     </div>
   );
