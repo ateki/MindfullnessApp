@@ -123,30 +123,19 @@ const marks = [
  * @returns 
  */
  //TODO Slider added and pass time set to countdown
-// TODO Attempted to have DigitalTime Display but ggetting error too many re-renders.
 function PomodoroTimerOnStart(props) {
 
-
-    const TEST_DURATION = 62; // 5 secs
-    console.log(`TEST_DURATION = ${TEST_DURATION}`);
+      // Initial starting time
+      const DEFAULT_WORK_DURATION  = 300; // 5 mins
     
-    // Time remaining 
-    /*  const [timeLeft, setTimeLeft] = useState(durationInMins * 60); */
-    const [timeLeft, setTimeLeft] = useState(TEST_DURATION);
+      // Time remaining 
+      const [timeLeft, setTimeLeft] = useState(DEFAULT_WORK_DURATION);
+      const [isTimerRunning, setIsTimerRunning]= useState(false); 
 
-    /*       // Initial starting time
-      const [durationInMins, setDurationInMins] = useState(2);                   // time in minutes
-      const [durationInMs, setDurationInMs] = useState(60000 * durationInMins);  // time in milliseconds
+      /*       // Initial starting time
+      const [durationInMins, setDurationInMins] = useState(DEFAULT_WORK_DURATION);      // time in minutes
+      const [durationInMs, setDurationInMs] = useState(60000 * DEFAULT_WORK_DURATION);  // time in milliseconds
        */
-
-    /*   // NO LONGER USING THESE 3....
-      const [minsLeft, setMinsLeft] = useState(durationInMins);  
-      const [secsLeft, setSecsLeft] = useState(2);  
-      const [countdownDisplay, setCountdownDisplay] = useState(null);   */
-
-      const [isTimerRunning, setIsTimerRunning]= useState(false); // rename isPaused
-      /* const [intervalId, setIntervalId]= useState();  */// for now auto start
-
 
       const startTimer = () => {
         console.log(`startTimer`);
@@ -161,7 +150,7 @@ function PomodoroTimerOnStart(props) {
       const resetTimer = () => {
         console.log(`resetTimer`);
         setIsTimerRunning(false);
-        setTimeLeft(TEST_DURATION);
+        setTimeLeft(DEFAULT_WORK_DURATION);
 
       }
 
@@ -184,18 +173,13 @@ function PomodoroTimerOnStart(props) {
       } 
 
 
-        const getDisplayTime = (time) => {
-          const mins = Math.floor(time / 60);
-          const secs = time % 60; 
-          return formatTimeLeft(mins, secs);
-          //return `${mins < 10 ? '0' + min : min} : ${secs < 10 ? '0' + secs : secs}`;
-        }
+      const getDisplayTime = (time) => {
+        const mins = Math.floor(time / 60);
+        const secs = time % 60; 
+        return formatTimeLeft(mins, secs);
+        //return `${mins < 10 ? '0' + min : min} : ${secs < 10 ? '0' + secs : secs}`;
+      }
       
-      
-
-
-
-
 
       useEffect(() => {
 
@@ -255,10 +239,10 @@ function PomodoroTimerOnStart(props) {
               )
             }
 
-            {/* TODO: show reset button only when timer not running and not at start ie: timesLeft < timer duration */}
+            {/* show reset button only when timer not running and not at start ie: timesLeft < timer duration */}
             {
             /*   !isTimerRunning && (timeLeft < TEST_DURATION}) */
-              (!isTimerRunning && timeLeft < TEST_DURATION)
+              (!isTimerRunning && timeLeft < DEFAULT_WORK_DURATION)
               ? 
               (
                   <input type="button" value="Reset" style={styles.ctrlBtn} 
