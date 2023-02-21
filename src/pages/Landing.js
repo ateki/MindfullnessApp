@@ -29,7 +29,7 @@ function Landing() {
 
 
   return (
-    <div>
+    <div className="landingPage">
       <div className="landingBackground1">
         <img className="petals" src={petals}></img>
         <div className="textContainer">

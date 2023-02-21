@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/meditations.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 let i;
@@ -82,6 +84,7 @@ function Meditations() {
         <div className="dropdownContainer">
             <div className="dropdown">
             <button className={style} onClick={() => {toggleDropdown(); changeStyle()}}>
+            <FontAwesomeIcon icon="fa-solid fa-brain" />
                 Mindfullness Meditation
             </button>
             {isDropdownOpen && (
