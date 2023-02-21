@@ -74,8 +74,9 @@ const styles = {
       cursor: 'pointer'
     },
 
-    ctrlBtnDisabled: {
-      backgroundColor: '#d87c8c',  // change to darker pink from 
+    ctrlBtnHidden: {
+      visibility: 'hidden',
+      backgroundColor: '#F08A9B',
       fontFamily: 'FutoSansBold',
       /* fontSize: , */
       color: 'white',
@@ -83,19 +84,9 @@ const styles = {
       padding: '16px 40px 16px 40px',
       borderRadius: '10px',
       marginTop: '30px',
-      width: '50%'
+      width: '50%',
+      cursor: 'pointer'
     }
-
-/*     ctrlBtnHide: {
-      backgroundColor: '#rgb(0,0,0,0)', 
-      fontFamily: 'FutoSansBold',
-      color: 'white',
-      borderStyle: 'none',
-      padding: '16px 40px 16px 40px',
-      borderRadius: '10px',
-      marginTop: '30px',
-      width: '50%'
-    } */
 };
 
 
@@ -275,7 +266,12 @@ function PomodoroTimerOnStart(props) {
                   }/>
               )
               : 
-              null
+             
+              (
+                <input type="button" value="Reset" style={styles.ctrlBtnHidden} disabled={!isTimerRunning} 
+                    onClick={() => resetTimer()
+                }/>
+            )
             }     
         </div> 
       </div>
