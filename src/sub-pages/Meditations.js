@@ -82,40 +82,40 @@ function Meditations() {
         <div className="dropdownContainer">
             <div className="dropdown">
             <button className={style} onClick={() => {toggleDropdown(); changeStyle()}}>
-                Dropdown Menu
+                Mindfullness Meditation
             </button>
             {isDropdownOpen && (
                 <div className="dropdown-menu">
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 1</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 2</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 3</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 4</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=ssss7V1_eyA')}>5 min - Mindfulness Meditation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=kH-OQn5Ui8g')}>7 min - Beginner Mindfulness Meditation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=ZToicYcHIOU')}>10 min - Daily Mindfulness Meditation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=6DQTcdOhRb8')}>10 min - Mindfulness Meditation</button>
                 </div>
                 )}
             </div>
             <div className="dropdown">
             <button className={style2} onClick={() => {toggleDropdown2(); changeStyle2()}}>
-                Dropdown Menu
+                Sleep Meditation
             </button>
             {isDropdownOpen2 && (
                 <div className="dropdown-menu">
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=cusA8wYBZKU')}>Button 1</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 2</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 3</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 4</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=aEqlQvczMJQ')}>10 min - Meditation For Sleep</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=rvaqPPjtxng')}>20 min - Guided Sleep & Deep Relaxation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=TP2gb2fSYXY')}>12 min - Guided Sleep Meditation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=U6Ay9v7gK9w')}>3 hour - Sleep Talk-Down Guided Meditation</button>
                 </div>
                 )}
             </div>
             <div className="dropdown">
             <button className={style3} onClick={() => {toggleDropdown3(); changeStyle3()}}>
-                Dropdown Menu
+                Progressive Meditation
             </button>
             {isDropdownOpen3 && (
                 <div className="dropdown-menu">
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 1</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 2</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 3</button>
-                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=EPGEzXuTg4s&list=RDEPGEzXuTg4s&start_radio=1')}>Button 4</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=D7QoBABZu8k')}>11 min - Progressive Muscle Relaxation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=9GURt2pvdAg')}>8min - Progressive Relaxation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=Tt_zQcNbpg8')}>18 to 30 min - Alpha Guided Relaxation</button>
+                <button className="dropdown-item" onClick={() => redirect('https://www.youtube.com/watch?v=F28MGLlpP90')}>13 min - Breathing and Relaxation</button>
                 </div>
                 )}
             </div>
