@@ -17,7 +17,8 @@ const styles = {
         gridTemplateColumns: '200px 200px ',
         padding: '10px',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        display: 'none',
 
       },
       

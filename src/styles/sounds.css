@@ -1,35 +1,96 @@
-.soundsBackground{
-    background: url("../assets/moonBg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
+.soundsBackground {
+  background: url("../assets/moonBg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 
-.soundBarBackground{
-    position: absolute;
-    background: #053247;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    height: 25vh;
-    width: 100vw;
-    margin-top: 75vh;
+.soundBarBackground {
+  position: absolute;
+  background: #053247;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 25vh;
+  width: 100vw;
+  margin-top: 75vh;
+
+  background: linear-gradient(-45deg, #092d3e, #1d4c63, #366d89, #94dbff, #e73c7e);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+
 }
 
-.soundsImage{
+/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite; */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.soundsImage {
+  position: fixed;
+  background: url("../assets/MeditatingWoman.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30%;
+  height: 85%;
+  width: 100%;
+  animation: MoveUpDown 13s linear infinite;
+  position: absolute;
+  bottom: 50px;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: 150px;
+  }
+  50% {
+    bottom: 240px;
+  }
+}
+
+.soundBar {
+  padding-top: 53vh;
+}
+
+@media only screen and (max-width: 430px) {
+  .soundsImage {
     position: fixed;
     background: url("../assets/MeditatingWoman.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
     height: 85%;
-    width: 100%;
-}
+    width: 200%;
+    animation: MoveUpDown 13s linear infinite;
+    position: absolute;
+    bottom: 50px;
+    left: -200px;
+  }
 
-.soundBar{
-    padding-top: 53vh;
+  @keyframes MoveUpDown {
+    0%,
+    100% {
+      bottom: 50px;
+    }
+    50% {
+      bottom: 100px;
+    }
+  }
 }
