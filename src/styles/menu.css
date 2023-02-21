@@ -21,13 +21,25 @@
     position: relative;
     top: 200px;
 }
+
+.iconText{
+    font-family: "FutoSansBold";
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.iconText3 {
+    margin-top: 27px;
+}
+
 .menuIcon1{
-    margin: 10px 10px 10px 10px;
+    margin: 22px 10px 10px 10px;
     width: 300px;
         height: auto;
 }
 .menuIcon1:hover{
-    margin: 10px 10px 10px 10px;
+    margin: 22px 10px 10px 10px;
     opacity: 0.8;
 }
 .menuIcon2{
@@ -43,7 +55,7 @@
 .menuIcon3{
     margin: 10px 10px 10px 10px;
     position: relative;
-    top: 17px;
+    top: 20px;
     width: 300px;
         height: auto;
 }
@@ -53,16 +65,16 @@
 }
 
 .menuIcon4{
-    margin: 10px 10px 10px 10px;
+    margin: 7px 10px 10px 10px;
     width: 300px;
         height: auto;
 }
 .menuIcon4:hover{
-    margin: 10px 10px 10px 10px;
+    margin: 7px 10px 10px 10px;
     opacity: 0.8;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 380px) {
     .menuBackground{
         background: url("../assets/LandingPage.png");
         background-repeat: no-repeat;
@@ -81,13 +93,17 @@
         position: relative;
         top: 140px;
     }
+    
+    .iconText{
+        font-size: .7rem;
+    }
     .menuIcon1{
-        margin: 10px 10px 10px 10px;
+        margin: 22px 10px 10px 10px;
         width: 50%;
         height: auto;
     }
     .menuIcon1:hover{
-        margin: 10px 10px 10px 10px;
+        margin: 22px 10px 10px 10px;
         opacity: 0.8;
     }
     .menuIcon2{
