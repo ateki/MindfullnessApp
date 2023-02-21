@@ -175,183 +175,76 @@ function PomodoroTimerOnStart(props) {
       }
 
 
-  /**
-   * Returns string representing time in format: mm : ss
-   * Paddiing out any single digit ensuring mins or secs passed in are always displayed as 2 digits
-   * ( 01 : 00,   12 : 03)
-   * Ensures text stays on same position
-   * @param {*} mins 
-   * @param {*} secs 
-   * @returns 
-   */
-  const formatTimeLeft = (mins, secs) => {
-    var mm = String(mins).padStart(2,'0');
-    var ss = String(secs).padStart(2,'0');
-    console.log(`formatTimeLeft returns ${mm} : ${ss}`);
+      /**
+       * Returns string representing time in format: mm : ss
+       * Paddiing out any single digit ensuring mins or secs passed in are always displayed as 2 digits
+       * ( 01 : 00,   12 : 03)
+       * Ensures text stays on same position
+       * @param {*} mins 
+       * @param {*} secs 
+       * @returns 
+       */
+      const formatTimeLeft = (mins, secs) => {
+        var mm = String(mins).padStart(2,'0');
+        var ss = String(secs).padStart(2,'0');
+        console.log(`formatTimeLeft returns ${mm} : ${ss}`);
 
-    return(`${mm} : ${ss}`);
-  } 
+        return(`${mm} : ${ss}`);
+      } 
 
 
-    const getDisplayTime = (time) => {
-      const mins = Math.floor(time / 60);
-      const secs = time % 60; 
-      return formatTimeLeft(mins, secs);
-      //return `${mins < 10 ? '0' + min : min} : ${secs < 10 ? '0' + secs : secs}`;
-    }
-  
-  
-
-/* //Currently not used - held over from PomodoroTimeOnLoad
-  const updateTimeLeft  = () => {
-    console.log(`1)------------------secsLeft = ${secsLeft}  minsLeft = ${minsLeft}`);
-
-    if (minsLeft>0 && secsLeft===0) {
-      setMinsLeft( minsLeft-1);
-      setSecsLeft(59);
-
-    } else if (secsLeft>0)  {
-      setSecsLeft(secsLeft-1)
-    } 
-    // TODO time ended
-    // display message?   Break time - buzzer soun d
-    // setSoundTimerEnd(true) - can we sound timer from html?
-    // popup message - and end alarm button?
-
-  } */
+        const getDisplayTime = (time) => {
+          const mins = Math.floor(time / 60);
+          const secs = time % 60; 
+          return formatTimeLeft(mins, secs);
+          //return `${mins < 10 ? '0' + min : min} : ${secs < 10 ? '0' + secs : secs}`;
+        }
+      
+      
 
 
 
 
-  useEffect(() => {
 
-    // note to self:  use effect should only ever return a function or undefined
+      useEffect(() => {
 
-    // Runs each time change to the isTimerRunning boolean - triggered by button press
-    console.log(`first render ${timeLeft}  isTimerRunning = ${isTimerRunning}`);
+        // note to self:  use effect should only ever return a function or undefined
 
-    
-    if (isTimerRunning && timeLeft > 0) { 
+        // Runs each time change to the isTimerRunning boolean - triggered by button press
+        console.log(`first render ${timeLeft}  isTimerRunning = ${isTimerRunning}`);
 
-     
-        // Decrement from time every second if timer running, continuesly run below code in setINterval, every sec:
-        const intervalId = setInterval(() => {
-              console.log(`body of setInterval executing ${isTimerRunning}`); // only executes once
-              /* setCountdownDisplay('XXXX');  */
-              setTimeLeft(timeLeft => timeLeft -1);
-         
-        }, 1000); //  every sec update display
         
-        // When decide to set this to running, give clean up function
-        // Cleanup happens when either useEffect runs again OR component is about to be unmounted!!! == similar to componentWillUnmount in class based components
-        // ... it issolates react component from side effects!!
-        return () => clearInterval(intervalId);
-    } else if (timeLeft===0) {
-      setIsTimerRunning(false);
-    }
+        if (isTimerRunning && timeLeft > 0) { 
 
-  
-              
-             
-    return undefined;
-  
-}, [isTimerRunning, timeLeft ]);     // Only run useEffect on button click - disable start /pause button when pressed.
+        
+            // Decrement from time every second if timer running, continuesly run below code in setINterval, every sec:
+            const intervalId = setInterval(() => {
+                  console.log(`body of setInterval executing ${isTimerRunning}`); // only executes once
+                  setTimeLeft(timeLeft => timeLeft -1);
+            
+            }, 1000); //  every sec update display
+            
+            // When decide to set this to running, give clean up function
+            // Cleanup happens when either useEffect runs again OR component is about to be unmounted!!! == similar to componentWillUnmount in class based components
+            // ... it issolates react component from side effects!!
+            return () => clearInterval(intervalId);
 
+        } else if (timeLeft===0) {
+          setIsTimerRunning(false);
+        }
 
-/* console.log(`after useEffect ${minsLeft} : ${secsLeft}`); */
+        return undefined;
+      
+    }, [isTimerRunning, timeLeft ]);     // Only run useEffect on button click - disable start /pause button when pressed.
 
-
-
-
-// TODO: Important
-// How do you stop the interval other than through pause button? ie What is move to a new page - continues to run - can see in the logs?
-// https://dev.to/dance2die/canceling-interval-in-react-52b5
-// componentWillUnmount() {
- // clearInterval(this.intervalID);
-//}
-//TODO: Need to clear Interval on moving off page????  COnsole logs still continue. How do I stop other than pause timer?
-// seems to now work if use state directly within jmx but not if want to check values to decide if reset secs/mins and format.
-// It did work on page load with setTimeout but not now...
-
-
-
-
-
-  // REDUCED TEST (2) - timer works on page load
-  //                  - can't get to work with onclick start/pause because
-  //                doesnt work with isTimerRunning as useEffect only runs when boolean changes (ie: pause or start clicked)
-  //                    does not run continiously as setTimeout only runs once - after 1000 secs.
-  //                  - however can get timer working on page load (if change useEffect dependency array to be []
-  //                    Option2: setTimeout 
-  //        Version below with setTimeout, updating secsLeft vis setSecsLeft, and [secsLeft] in dependency array works on page load
-
-
-/*   useEffect(() => {
-    // Runs each time change to the isTimerRunning boolean - triggered by button press
-    console.log(`first time ${minsLeft} : ${secsLeft}  isTImerRunning = ${isTimerRunning}`);
-
-      // if (isTimerRunning) {    
-      // if timer running, continuesly run below code in setINterval, every sec:
-      const timeout = setTimeout(() => {
-            console.log(`body of setTimeout executing`); // only executes once
-            setSecsLeft(secsLeft -1);
-         
-      }, 1000); //  every sec update display
-   
-    
-//}, [isTimerRunning]);    // doesnt work, as useEffect will only be called on this bool changing (ie button click) and timeout body only runs once
-}, [secsLeft]);  // only works for setTimeout not setInterval
- */
-
-
-  // to get changed value either 
-  
-  // Option2: setTimeout only works if dependency array of useEffect has secsLeft - so called each time sec updated ie: every second
-/*   useEffect(() => {
-    console.log(`first time ${minsLeft} : ${secsLeft}  `);
-      // const interval = setInterval(() => { 
-        const timeout = setTimeout(() =>  {
-          // clearInterval(interval); 
-          updateTimeLeft(); 
-          setCountdownDisplay(formatTimeLeft(minsLeft, secsLeft)); 
-
-  }, 1000); //  every sec update display
-
-}, [secsLeft]);  // dependency array - any data changed then execute the callback function
- */
 
 
     return (
       <div className='wrapper' style={styles.wrapper}>
          <div className='container' style={styles.container}>
-
             <div className="timer_circle" style={styles.timer_circle}>
-              
-              
-               {/*  <p className="count_down" style={styles.count_down}>{timeLeft}</p>  */}
-                
-              
                 <p className="count_down" style={styles.count_down}>{getDisplayTime(timeLeft)}</p> 
-
-
-
-         {/*        <p className="count_down" style={styles.count_down}>{getDisplayTime(timeLeft)}</p>  */}
-
-               {/*  <p className="count_down" style={styles.count_down}>{formatTimeLeft( minsLeft, secsLeft)}</p>  */}
-               {/*  <p className="count_down" style={styles.count_down}>{secsLeft}   - {countdownDisplay}</p>  */}
-           
-                {/* <DigitalDisplay mins={minsLeft} secs={secsLeft}/> */}
             </div>
-
-              {/* TODO: Add slider */}
-{/*             <Slider
-              aria-label="Always visible"
-              defaultValue={80}
-              getAriaValueText={valuetext}
-              step={10}
-              marks={marks}
-              valueLabelDisplay="on"
-            /> */}
 
 
             {/* Display ctrl buttons depending on whether timer is running */}
