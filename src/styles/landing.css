@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .landingBackground1{
     background: url("../assets/LandingPage.png");
     background-repeat: no-repeat;
@@ -17,12 +22,14 @@
 .bodyText{
     font-family:"FutoSansMedium" ;
     color: white;
+    width: 600px;
 }
 
 .textContainer{
     position: relative;
     top: 250px;
     left: 60px;
+    
 }
 
 .landingButton{
@@ -72,18 +79,18 @@
 .meditatingMan{
     position: absolute;
     margin-left: 35%;
-    animation: MoveUpDown 13s linear infinite;
+    animation: MoveUpDown2 13s linear infinite;
     position: absolute;
     bottom: -100px;
 }
 
   
-  @keyframes MoveUpDown {
+  @keyframes MoveUpDown2 {
     0%, 100% {
       bottom: -160px;
     }
     50% {
-      bottom: -80px;
+      bottom: -0px;
     }
   }
 
@@ -96,3 +103,112 @@
     height: 100vh;
     width: 100vw;
 }
+
+@media only screen and (max-width: 430px) {
+
+    .landingPage{
+        overflow-x: hidden;
+    }
+
+    .landingBackground1{
+        background: url("../assets/LandingPage.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .mainTitle{
+        font-family: "RammettoOneRegular";
+        color: white;
+        font-size: 50px;
+    }
+    
+    .bodyText{
+        font-family:"FutoSansMedium" ;
+        color: white;
+        width: 350px;
+    }
+    
+    .textContainer{
+        position: relative;
+        top: 250px;
+        left: 20px;
+        
+    }
+    
+    .landingButton{
+        background-color: #F08A9B;
+        font-family:"FutoSansBold" ;
+        font-size: ;
+        color: white;
+        border-style: none;
+        padding: 16px 40px 16px 40px;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+    
+    .landingButton:hover{
+        background-color: #d87c8c;  
+    }
+    
+    .petals{
+        position: absolute;
+        filter: blur(5px);
+        width: 300px !important;
+        height: auto;
+    }
+    
+    .landingBackground2{
+        background: url("../assets/Waterfall.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .landingBackground3{
+        background: url("../assets/CrystalCave.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    
+    
+    .meditatingMan{
+        position: absolute;
+        margin-left: 35%;
+        animation: MoveUpDown 13s linear infinite;
+        position: absolute;
+        bottom: -100px;
+    }
+    
+      
+      @keyframes MoveUpDown {
+        0%, 100% {
+          bottom: -160px;
+        }
+        50% {
+          bottom: -80px;
+        }
+      }
+    
+      .landingBackground4{
+        background: url("../assets/Cave.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+    }
+
+  }

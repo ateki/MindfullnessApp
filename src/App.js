@@ -1,7 +1,10 @@
 import {Routes, Route} from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
 
 import Header from './components/Header'
+import BurgerMenu from "./components/BurgerHeader"
 
 import Landing from './pages/Landing'
 import Menu from './pages/Menu'
@@ -15,11 +18,13 @@ import Meditations from './sub-pages/Meditations'
 import Sounds from './sub-pages/Sounds'
 import Quotes from './sub-pages/Quotes'
 
+library.add(fab)
 
 function App() {
   return (
     <>
     <Header />
+<BurgerMenu />
       <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/menu" element={<Menu/>} />
@@ -30,6 +35,7 @@ function App() {
       <Route path="/breathing" element={<Breathing/>} />
       <Route path="/pomodoro" element={<Pomodoro/>} />
       <Route path="/meditations" element={<Meditations/>} />
+      {/* <Route path="/music" element={<Music/>} /> */}
       <Route path="/sounds" element={<Sounds/>} />
       <Route path="/quotes" element={<Quotes/>} />
 

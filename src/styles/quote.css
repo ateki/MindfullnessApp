@@ -8,12 +8,13 @@
   width: 100vw;
 }
 
-h1{
+.quoteH1{
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
     color: #2c5555;
 }
+
 
 .q-container {
     display: flex;

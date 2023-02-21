@@ -1,12 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import logo from "../assets/MindfullLogo.png"
 
-
-const activeStyle = { color: "#ad3b5d86", border: "2px solid #ad3b5d86", padding: "10px", top: "-11px" };
-
-
-
-const activeClassName = "underline";
+const activeStyle = { color: "#1f7676", border: "2px solid #1f7676", padding: "10px", top: "-11px" };
 
 function Header() {
   return (

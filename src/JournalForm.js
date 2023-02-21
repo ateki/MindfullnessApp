@@ -24,8 +24,7 @@ function JournalForm({ addEntry }) {
 
 
 // To go into App
-{/* <h1>Daily Journal</h1>
-      <JournalForm addEntry={addEntry} />
-      <JournalList entries={entries} /> */}
+
+ 
 
 export default JournalForm;

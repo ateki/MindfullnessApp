@@ -75,7 +75,7 @@ const Controls = forwardRef(
         <Grid
           container
           direction="column"
-          justify="space-between"
+          justifyContent="space-between"
           style={{ flexGrow: 1 }}
         >
           <Grid
@@ -116,9 +116,9 @@ const Controls = forwardRef(
                   className='controlbutton'
                 >
                   {playing ? (
-                    <PauseIcon fontSize="large" />
+                    <PauseIcon className="playPauseCircle" fontSize="large" />
                   ) : (
-                    <PlayArrowIcon fontSize="large" />
+                    <PlayArrowIcon className="playPauseCircle" fontSize="large" />
                   )}
                 </IconButton>
 
