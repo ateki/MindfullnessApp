@@ -57,7 +57,6 @@ const styles = {
 
     /* Outer circle representing border - using conic gradient property as background - with gradient of colour transitions rotated around a center point */
     /* Appears below */
-    //TODO: Decide on colouring 
     gradient_outer_circle: {
       
       borderRadius: '50%',    // circle
@@ -66,9 +65,8 @@ const styles = {
       /* Option1: Indicating Hold breath at bottom */
       /*      background: 'conic-gradient(#ad3b5d86 0% 45%, #f6fce0 45% 55%,  #3badad 55% 100%)', */
       /* Option 2: Indicating  hold breath at top */
-     /*   background: 'conic-gradient(#f6fce0 0% 5%, #ad3b5d86 5% 50%,  #3badad 50% 95%, #f6fce0 95% 100%)', */
-      /* background: 'conic-gradient(var(--primary-light5) 0% 5%, #ad3b5d86 5% 50%,  var(--primary-dark4) 50% 95%, var(--primary-light5) 95% 100%)', */
-      background: 'conic-gradient(var(--light) 0% 5%, #ad3b5d86 5% 50%,  var(--dark) 50% 95%, var(--medium) 95% 100%)',
+      /* background: 'conic-gradient(var(--medium) 0% 5%, #ad3b5d86 5% 50%,  var(--dark) 50% 95%, var(--medium) 95% 100%)', */
+      background: 'conic-gradient(var(--light) 0% 5%, #ad3b5d86 5% 50%,  var(--dark) 50% 95%, var(--light) 95% 100%)',
     
       // background circle/border needs to be slightly larger than circle/container
       height: '325px',
@@ -162,7 +160,6 @@ const CLASSNAME_CONTAINER_SHRINK = 'container deflate_bubble';
  * NOTE: Currently the below has 2 concerns:
  * Use of utility functions did not appear to work.  usePrompt, useState, useEffect only seemed to work when called
  * directly in the React component function, not from a utility function.
- * TODO: Break down the above code in utility function/s but need to use REACT hooks effect and state from below
  * @param {*} props 
  * @returns html representing breathing bubble - visually shows different stages of breathing cycle
  */
@@ -172,21 +169,17 @@ function BreathingBubble(props) {
     const [containerClasses, setContainerClasses] = useState(CLASSNAME_CONTAINER_GROW);   //  to mimic inhale/exhale
 
     const breathingCycleAnimation  = () => {
-        console.log(`breathingCycleAnimation ...`);
              // Initial breathing cycle before first delay of setInterval kicks in
-             console.log(MSG_BREATHE_IN);
              setPrompt(MSG_BREATHE_IN);
              setContainerClasses(CLASSNAME_CONTAINER_GROW);
      
              setTimeout(() => {
                    // stage: hold breathe for holdTime
-                   console.log(MSG_HOLD);
                    setPrompt(MSG_HOLD);
                    //setContainerClasses(CLASSNAME_CONTAINER_HOLD); 
                    
                    setTimeout(() => {
                          // stage:  breathe out until interval reaches totalCycleTime (time remaining)
-                         console.log(MSG_BREATHE_OUT);
                          setPrompt(MSG_BREATHE_OUT);
                          setContainerClasses(CLASSNAME_CONTAINER_SHRINK);
                        
@@ -229,7 +222,6 @@ function BreathingBubble(props) {
             
             <div className="gradient_outer_circle" style={styles.gradient_outer_circle}></div>
 
-            {/* Temp test at spinning indicator */}
             <div className="progress_circle" style={styles.progress_circle}></div>
         
         </div>
