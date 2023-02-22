@@ -9,15 +9,19 @@ Mindfulness app, is a web application with the purpose to help people with ADHD 
 Functions:
 
 Breathing bubble
+--Add image--
 
 Focus timer
+--Add image--
 
 Meditations
+--Add image--
 
 Quotes
+--Add image--
 
 Garden
-
+--Add image--
 
 
 This project was made as a team effort.
@@ -47,29 +51,29 @@ This application is covered under the: MIT License
 
 ## Contributing
 
-https://github.com/ateki
+[Ateki](https://github.com/ateki)
 
-https://github.com/ayahxsheikh
+[Ayahxsheikh](https://github.com/ayahxsheikh)
 
-https://github.com/dezanidesign
+[Dezanidesign](https://github.com/dezanidesign)
 
-https://github.com/Snoopawoo
+[Snoopawoo](https://github.com/Snoopawoo)
 
 Further contributions are not possible this time.
 
 ## Questions
 
 For questions, contact us at:
- - Github:
+ Github:
 
-    [Ateki](https://github.com/ateki)
+[Ateki](https://github.com/ateki)
 
-    [Ayahxsheikh](https://github.com/ayahxsheikh)
+[Ayahxsheikh](https://github.com/ayahxsheikh)
 
-    [Dezanidesign](https://github.com/dezanidesign)
+[Dezanidesign](https://github.com/dezanidesign)
 
-    [Snoopawoo](https://github.com/Snoopawoo)
+[Snoopawoo](https://github.com/Snoopawoo)
 
- - Please reach out on the above ways if you have any questins.
+ Please reach out on the above ways if you have any questins.
 
     
