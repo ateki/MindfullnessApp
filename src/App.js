@@ -1,6 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
+import {fas} from '@fortawesome/free-solid-svg-icons'
 
 
 import Header from './components/Header'
@@ -17,8 +18,9 @@ import Pomodoro from './sub-pages/Pomodoro'
 import Meditations from './sub-pages/Meditations'
 import Sounds from './sub-pages/Sounds'
 import Quotes from './sub-pages/Quotes'
+import Music from './sub-pages/Music'
 
-library.add(fab)
+library.add(fab, fas)
 
 function App() {
   return (
@@ -35,7 +37,7 @@ function App() {
       <Route path="/breathing" element={<Breathing/>} />
       <Route path="/pomodoro" element={<Pomodoro/>} />
       <Route path="/meditations" element={<Meditations/>} />
-      {/* <Route path="/music" element={<Music/>} /> */}
+      <Route path="/music" element={<Music/>} />
       <Route path="/sounds" element={<Sounds/>} />
       <Route path="/quotes" element={<Quotes/>} />
 
