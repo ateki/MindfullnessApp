@@ -94,7 +94,7 @@ function Menu(){
             <div className="menuIconsContainer">
                 <div className="iconContainer">
                     <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
-                    <p className="iconText" >Pomodoro</p>
+                    <p className="iconText" >Focus</p>
                 </div>
                 <div className="iconContainer">
                     <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
