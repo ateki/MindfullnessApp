@@ -9,19 +9,28 @@ Mindfulness app, is a web application with the purpose to help people with ADHD 
 Functions:
 
 Breathing bubble
---Add image--
+![Alt text](/src/assets/r-breathe.jpg?raw=true "Breathe")
 
 Focus timer
---Add image--
+![Alt text](/src/assets/r-focus.jpg?raw=true "Focus")
 
 Meditations
---Add image--
+![Alt text](/src/assets/r-meditations.jpg?raw=true "Meditation")
+
+Player
+![Alt text](/src/assets/r-player.jpg?raw=true "Player")
 
 Quotes
---Add image--
+![Alt text](/src/assets/r-quotes.jpg?raw=true "Quotes")
 
 Garden
---Add image--
+![Alt text](/src/assets/r-garden.jpg?raw=true "Garden")
+
+Contact Form
+![Alt text](/src/assets/r-contacts.jpg?raw=true "Contacts")
+
+Journal
+![Alt text](/src/assets/r-journal.jpg?raw=true "Journal")
 
 
 This project was made as a team effort.
