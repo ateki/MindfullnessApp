@@ -1,17 +1,17 @@
 import BreathingBubble from '../components/BreathingBubble';
-
+import "../styles/breathing.css"
 import imgBg from '../assets/sunset.jpg';
 
 const styles = {
-    backgroundImg: {
-        backgroundImage: `url(${imgBg})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        width: '100vw',  // 100% of current viewpoint 
-        height: '100vh' 
-    },
+    // backgroundImg: {
+    //     backgroundImage: `url(${imgBg})`,
+    //     backgroundPosition: 'center',
+    //     backgroundSize: 'cover',
+    //     backgroundRepeat: 'no-repeat',
+    //     backgroundAttachment: 'fixed',
+    //     width: '100vw',  // 100% of current viewpoint 
+    //     height: '100vh' 
+    // },
 
     bubble: {
         position: 'absolute',
@@ -32,7 +32,7 @@ const styles = {
   
 function Breathing(){
     return(
-        <div style={styles.backgroundImg}>
+        <div className='backgroundImg'>
             
             <div className='bubble' style={styles.bubble}>
                 <BreathingBubble/>

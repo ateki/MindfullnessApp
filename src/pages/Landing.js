@@ -2,12 +2,15 @@ import "../styles/landing.css";
 import petals from "../assets/FallingPetals.gif";
 import woman from "../assets/MeditatingWoman.png";
 import man from "../assets/MeditatingMan.png";
+import lips from "../assets/lips.gif"
+import Drawer from "../components/Drawer"
 
 import React, { useState, useEffect } from "react";
 
 function Landing() {
   return (
     <div className="landingPage">
+
       <div className="landingBackground1">
         <img className="petals" src={petals}></img>
         <div className="textContainer">
@@ -19,6 +22,7 @@ function Landing() {
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
+            
           </div>
           <a href="/menu">
             <button className="landingButton">Start the Journey</button>
@@ -73,6 +77,7 @@ function Landing() {
           <a href="/Quotes">
             <button className="landingButton">Start the Journey</button>
           </a>
+          <img className="lips" src={lips}></img>
         </div>
       </div>
 
