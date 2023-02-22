@@ -1,20 +1,13 @@
 /**
  * Filename: PomodoroTimer.js
  * Contents:  
- *   With start and pause button functionality
+ *   So far with start, pause reset functionality.
+ * To be extende Settings/Actions/WorkRest Periods
  *   
  */
 
-/* import Slider from '@mui/material/Slider';
-// or */
-/* import { Slider } from '@mui/material'; */
-
-import Slider from "@material-ui/core/Slider";
 
 import { useState, useEffect } from 'react';
-//import '../styles/pomodoro.css';
-
-/* import DigitalDisplay from './DigitalDisplay'; */
 
 
 const styles = {
@@ -126,29 +119,21 @@ const marks = [
 function PomodoroTimerOnStart(props) {
 
       // Initial starting time
-      const DEFAULT_WORK_DURATION  = 300; // 5 mins
+      const DEFAULT_WORK_DURATION  = 1500; // 25 mins
     
       // Time remaining 
       const [timeLeft, setTimeLeft] = useState(DEFAULT_WORK_DURATION);
       const [isTimerRunning, setIsTimerRunning]= useState(false); 
 
-      /*       // Initial starting time
-      const [durationInMins, setDurationInMins] = useState(DEFAULT_WORK_DURATION);      // time in minutes
-      const [durationInMs, setDurationInMs] = useState(60000 * DEFAULT_WORK_DURATION);  // time in milliseconds
-       */
-
       const startTimer = () => {
-        console.log(`startTimer`);
         setIsTimerRunning(true);
 
       }
       const pauseTimer = () => {
-        console.log(`pauseTimer`);
         setIsTimerRunning(false);
 
       }
       const resetTimer = () => {
-        console.log(`resetTimer`);
         setIsTimerRunning(false);
         setTimeLeft(DEFAULT_WORK_DURATION);
 
@@ -167,8 +152,6 @@ function PomodoroTimerOnStart(props) {
       const formatTimeLeft = (mins, secs) => {
         var mm = String(mins).padStart(2,'0');
         var ss = String(secs).padStart(2,'0');
-        console.log(`formatTimeLeft returns ${mm} : ${ss}`);
-
         return(`${mm} : ${ss}`);
       } 
 
@@ -182,13 +165,8 @@ function PomodoroTimerOnStart(props) {
       
 
       useEffect(() => {
-
-        // note to self:  use effect should only ever return a function or undefined
-
         // Runs each time change to the isTimerRunning boolean - triggered by button press
-        console.log(`first render ${timeLeft}  isTimerRunning = ${isTimerRunning}`);
 
-        
         if (isTimerRunning && timeLeft > 0) { 
 
         
@@ -210,7 +188,7 @@ function PomodoroTimerOnStart(props) {
 
         return undefined;
       
-    }, [isTimerRunning, timeLeft ]);     // Only run useEffect on button click - disable start /pause button when pressed.
+    }, [isTimerRunning, timeLeft]);     // Only run useEffect on button click - disable start /pause button when pressed.
 
 
 
