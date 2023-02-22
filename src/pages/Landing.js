@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 
 function Landing() {
   return (
-    <div className="landingPage">
+    <div>
       <div className="landingBackground1">
         <img className="petals" src={petals}></img>
         <div className="textContainer">
