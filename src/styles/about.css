@@ -10,24 +10,31 @@
 }
 
 .aboutContainer {
-    padding-top: 8rem;
+    padding-top: 5rem;
     color: #fff;
     text-align: center;
 }
 
 .contentContainer {
+    margin: 5rem auto 0 auto;
     max-width: 80%;
-    margin: 1rem auto;
+    padding: 3%;
+    background-color: #387e78a4;
+    border-radius: 30px;
 }
 
 .heading {
+    font-family:"FutoSansBold" ;
+    margin: 1rem 0;
+}
+
+.logo1 {
     font-family:"RammettoOneRegular" ;
-    margin: 1.6rem 0;
 }
 
 .slogan {
     margin-bottom: 1rem;
-    font-family:"FutoSansBold" ;
+    font-family:"FutoSansBold";
 }
 
 .textDiv {
@@ -39,11 +46,11 @@
 
 .aboutText {
     margin-bottom: .5rem;
-    margin-right: .8rem;
+    margin-right: 1rem;
     padding: 5% 4% 2% 4%;
     border: 1px solid #ffffffac;
     border-radius: 20px;
-    background-color: #4fa19ba4;
+    background-color: #96b5b3cf;
     font-family: "FutoSansRegular";
 }
 
@@ -54,26 +61,109 @@
     border-style: none;
     padding: 16px 20px 16px 20px;
     border-radius: 10px;
-    margin-top: 30px;
+    margin-top: 1rem;
     cursor: pointer;
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
+    .aboutContainer {
+        padding-top: 4rem;
+    }
+    .heading {
+        font-size:22px;
+        margin-bottom: 1rem;
+    }
+    .slogan {
+        font-size: 1rem;
+    }
+
     .textDiv {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        margin-top: 4rem;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-top: 1.3rem;
+        font-size: 15px;
     }
 
     .aboutText {
         margin-bottom: .5rem;
         margin-right: .8rem;
-        /* padding: 5% 4% 2% 4%; */
-        border: 1px solid #ffffffac;
-        border-radius: 20px;
-        background-color: #4fa19ba4;
-        font-family: "FutoSansRegular";
+        padding: 2.5%;
+
+    }
+
+    .about-btn {
+        background-color: #F08A9B;
+        font-family:"FutoSansBold" ;
+        color: white;
+        border-style: none;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .aboutContainer {
+        padding-top: 3rem;
+    }
+
+    .slogan {
+        font-size: 1rem;
+    }
+
+    .textDiv {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        margin-top: 2rem;
+        font-size: 1rem;
+    }
+
+    .aboutText {
+        margin-bottom: .5rem;
+        margin-right: .8rem;
+        padding: 3% 7%;
+
+    }
+
+    .about-btn {
+        background-color: #F08A9B;
+        font-family:"FutoSansBold" ;
+        color: white;
+        border-style: none;
+        padding: 10px 10px 10px 10px;
+        border-radius: 10px;
+        margin-top: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .aboutContainer {
+        padding-top: 6.3rem;
+    }
+    .heading {
+        font-size: 40px;
+        margin-bottom: 1.5rem;
+        margin-top:0rem;
+    }
+    .slogan {
+        font-size: 1.1rem;
+    }
+    .aboutText {
+        margin-bottom: 1rem;
+        padding: 8% 4%;
+    }
+
+    .about-btn {
+        background-color: #F08A9B;
+        font-family:"FutoSansBold" ;
+        color: white;
+        border-style: none;
+        padding: 22px 20px 22px 20px;
+        border-radius: 10px;
+        margin-top: 1rem;
+
     }
 }

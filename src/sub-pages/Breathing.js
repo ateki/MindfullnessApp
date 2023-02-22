@@ -1,6 +1,6 @@
 import BreathingBubble from '../components/BreathingBubble';
 
-import imgBg from '../assets/sunset.jpg';
+import imgBg from '../assets/Cave.png';
 
 const styles = {
     backgroundImg: {

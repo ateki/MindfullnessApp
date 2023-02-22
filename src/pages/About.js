@@ -3,8 +3,8 @@ import '../styles/about.css'
 function About(){
     return (
         <div className="aboutBg aboutContainer">
-            <h1 className="heading">Welcome to MINDFULL</h1>
             <div className="contentContainer" >
+            <h1 className="heading">Welcome to <span className="heading logo1">MINDFULL</span></h1>
 
                 <h3 className="slogan">An app designed to help you focus, de-stress, and stay inspired. Our app offers a variety of features to help you cultivate mindfulness and a sense of calm in your daily life. </h3>
 
