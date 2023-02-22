@@ -17,18 +17,7 @@ function About(){
                     <h4 className="aboutText">Take time to relax and de-stress through peaceful meditations and breathing exercises</h4>
 
                     <h4 className="aboutText">Stay inspired and become self-aware by reflecting on your personal growth through journaling </h4>
-
-                    {/* <p className="aboutText">Our timer feature allows you to set dedicated focus time for your tasks, helping you to eliminate distractions and improve productivity.</p> */}
-                        
-                    {/* <p className="aboutText">
-                    The breathing exercise feature guides you through a series of deep breaths, helping you to relax and reduce stress.</p> */}
-                        
-                    {/* <p className="aboutText"> 
-                    Our quotes page provides daily inspiration and motivation to help you stay on track with your goals.</p> */}
-
-                    {/* <p className="aboutText">
-                    Our meditation page offers a variety of soothing meditations, including those for sleep and mindfulness. These guided meditations are designed to help you unwind, let go of stress, and achieve a state of inner peace.</p>  */}
-
+                    
                     {/* <p className="aboutText">
                     In addition to these features, our app includes a journaling feature, allowing you to write down your thoughts, feelings, and reflections. This helps you to gain clarity and perspective on your experiences, leading to greater self-awareness and personal growth.</p> */}
                 </div>

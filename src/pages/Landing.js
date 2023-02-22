@@ -13,12 +13,8 @@ function Landing() {
         <div className="textContainer">
           <h1 className="mainTitle">MINDFULL</h1>
           <div className="bodyText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+          An app that helps you stay focused, relaxed, and inspired. Our app is designed to support your mental and emotional well-being, offering a range of features to help you cultivate mindfulness and find inner peace.
+          Start your mindfulness journey today and discover the peace and clarity that comes with a mindful life.
           </div>
           <a href="/menu">
             <button className="landingButton">Start the Journey</button>
@@ -30,12 +26,7 @@ function Landing() {
         <div className="textContainer">
           <h1 className="mainTitle">MEDITATE</h1>
           <div className="bodyText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+          Take time out of your day to relax and unwind. Reward your body and your mind to refocus and improve your emotional and physical well-being. These Meditations are designed to help you let go of stress, and achieve a state of inner peace. What are you waiting for?
           </div>
           <a href="/Meditations">
             <button className="landingButton">Start the Journey</button>
@@ -63,12 +54,8 @@ function Landing() {
         <div className="textContainer">
           <h1 className="mainTitle">QUOTES</h1>
           <div className="bodyText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            Need inspiration? 
+            Head over to our quootes page to be filled with daily inspiration and motivation to help you stay on track with your goals.
           </div>
           <a href="/Quotes">
             <button className="landingButton">Start the Journey</button>
