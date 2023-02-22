@@ -75,16 +75,10 @@ function Landing() {
         <div className="textContainer">
           <h1 className="mainTitle">BREATHE</h1>
           <div className="bodyText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.
-          </div>
+            Feel the power of deep, mindful breathing.   Calm the mind... calm the body...
+            find the peace you crave with long, deep breathing.
+            Visualise your breath with our breathing bubble to help find the CALM you deserve.
+            </div>
           <a href="/Breathing">
           <button className="landingButton">Start the Journey</button>
           </a>
