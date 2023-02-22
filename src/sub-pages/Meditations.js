@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../styles/meditations.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 let i;
@@ -82,6 +84,7 @@ function Meditations() {
         <div className="dropdownContainer">
             <div className="dropdown">
             <button className={style} onClick={() => {toggleDropdown(); changeStyle()}}>
+            <FontAwesomeIcon className="icn" icon="fa-solid fa-brain" />
                 Mindfullness Meditation
             </button>
             {isDropdownOpen && (
@@ -95,6 +98,7 @@ function Meditations() {
             </div>
             <div className="dropdown">
             <button className={style2} onClick={() => {toggleDropdown2(); changeStyle2()}}>
+            <FontAwesomeIcon className="icn" icon="fa-solid fa-bed" />
                 Sleep Meditation
             </button>
             {isDropdownOpen2 && (
@@ -108,6 +112,7 @@ function Meditations() {
             </div>
             <div className="dropdown">
             <button className={style3} onClick={() => {toggleDropdown3(); changeStyle3()}}>
+            <FontAwesomeIcon className="icn" icon="fa-solid fa-lungs" />
                 Progressive Meditation
             </button>
             {isDropdownOpen3 && (
