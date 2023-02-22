@@ -1,6 +1,7 @@
-import PomodoroTimer from '../components/PomodoroTimer';
+/* import PomodoroTimer from '../components/PomodoroTimerOnLoad'; */ // on page load
+import PomodoroTimer from '../components/PomodoroTimerOnStart';
 
-import imgBg from '../assets/LandingPage.png';
+import imgBg from '../assets/focusBackground.jpg';
 
 
 // background-color: #F08A9B; // pink used on main page
@@ -18,14 +19,16 @@ const styles = {
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
         width: '100vw',  
-        height: '100vh'
+        height: '100vh',
+        
     }
 }
 
 function Pomodoro(){
     return(
         <div style={styles.backgroundImg}>
-            <PomodoroTimer/>
+            <PomodoroTimer/> 
+            {/* Include settings if showSettings selected */}
         </div>
     )
 }
