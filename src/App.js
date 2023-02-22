@@ -18,6 +18,7 @@ import Pomodoro from './sub-pages/Pomodoro'
 import Meditations from './sub-pages/Meditations'
 import Sounds from './sub-pages/Sounds'
 import Quotes from './sub-pages/Quotes'
+import Journal from './sub-pages/Journal'
 
 library.add(fab, fas)
 
@@ -39,6 +40,7 @@ function App() {
       {/* <Route path="/music" element={<Music/>} /> */}
       <Route path="/sounds" element={<Sounds/>} />
       <Route path="/quotes" element={<Quotes/>} />
+      <Route path="/journal" element={<Journal/>} />
 
 
 

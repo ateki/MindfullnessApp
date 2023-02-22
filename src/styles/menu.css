@@ -1,10 +1,10 @@
 .menuBackground{
-    background: url("../assets/LandingPage.png");
+    background: url("../assets/menuBackground.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 250vh;
+    height: 320vh;
     width: 100vw;
     overflow-x: hidden !important;
     overflow-y: hidden !important;
@@ -74,6 +74,18 @@
     opacity: 0.8;
 }
 
+.menuIcon5{
+    margin: 7px 10px 10px 10px;
+    width: 300px;
+        height: auto;
+        position: relative;
+        margin-top: 30px;
+}
+.menuIcon5:hover{
+    margin: 7px 10px 10px 10px;
+    opacity: 0.8;
+}
+
 @media only screen and (max-width: 380px) {
     .menuBackground{
         background: url("../assets/LandingPage.png");
@@ -134,6 +146,17 @@
         height: auto;
     }
     .menuIcon4:hover{
+        margin: 10px 10px 10px 10px;
+        opacity: 0.8;
+    }
+
+    .menuIcon5{
+        margin: 10px 10px 10px 10px;
+        width: 50%;
+        height: auto;
+       
+    }
+    .menuIcon5:hover{
         margin: 10px 10px 10px 10px;
         opacity: 0.8;
     }
