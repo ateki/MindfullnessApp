@@ -1,94 +1,75 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mindfulness App
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Description
 
+Mindfulness app, is a web application with the purpose to help people with ADHD and concentration. Giving you an array of tools to work with and rewarding you for the work you do. Whether you want to be productive, or just looking for a place to wind down, this page is for you.
 
-### Setup: npm installs required
-npm install --force
+Functions:
 
+Breathing bubble
 
-npm install react-scripts --save
-npm install react-router-dom --save
+Focus timer
 
+Meditations
 
+Quotes
 
-## Available Scripts
-
-In the project directory, you can run:
-
-
-
-### `npm start`
+Garden
 
 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project was made as a team effort.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.\
+## Table of Contents
 
-If you get an error 'react-scripts is not recognised as an internal or external command.' check if your node_modules/
-is available.   Note this directory is not in Git and needs to be added manually after first checking out the project.
+ - [Installation](#installation)
+ - [Usage](#usage)
+ - [Contributing](#contributing)
+ - [Questions](#questions)
 
-Add it manually by running the following command:
-$ npm install react-scripts --save
+## Installation
 
-Then `npm start` once more.
+Page: N/A
 
+Code / React : Before running ```npm start``` please run ```npm install --force```
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use just visit the deployed page at :
 
-### `npm run build`
+---Link comes here---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This application is covered under the: MIT License
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
 
-### `npm run eject`
+https://github.com/ateki
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://github.com/ayahxsheikh
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+https://github.com/dezanidesign
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://github.com/Snoopawoo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Further contributions are not possible this time.
 
-## Learn More
+## Questions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For questions, contact us at:
+ - Github:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    [Ateki](https://github.com/ateki)
 
-### Code Splitting
+    [Ayahxsheikh](https://github.com/ayahxsheikh)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    [Dezanidesign](https://github.com/dezanidesign)
 
-### Analyzing the Bundle Size
+    [Snoopawoo](https://github.com/Snoopawoo)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ - Please reach out on the above ways if you have any questins.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    
