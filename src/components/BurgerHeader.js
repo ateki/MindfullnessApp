@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import burgerIcon from "../assets/menu.png"
 import "../styles/burgermenu.css"
+import logo from "../assets/MindfullLogo.png";
 
 function BurgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,9 @@ function BurgerMenu() {
       
       <img src={burgerIcon} className="burger-menu-button" onClick={toggleMenu}></img>
         <span className="burger-menu-icon" />
-      
+        <NavLink className="logoMobile" to="/">
+          <img src={logo}></img>
+        </NavLink>
       {isOpen && (
         <ul className='burger-menu-list'>
         <li><NavLink to="/menu">MENU</NavLink></li>

@@ -1,6 +1,6 @@
 import BreathingBubble from '../components/BreathingBubble';
 
-import imgBg from '../assets/Cave.png';
+import imgBg from '../assets/sunset.jpg';
 
 const styles = {
     backgroundImg: {
@@ -29,14 +29,17 @@ const styles = {
  };
  
 
+  
 function Breathing(){
     return(
         <div style={styles.backgroundImg}>
+            
             <div className='bubble' style={styles.bubble}>
                 <BreathingBubble/>
             </div>
         </div>
     )
-}
+} 
+
 
 export default Breathing

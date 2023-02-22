@@ -17,6 +17,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: FutoSansRegular;
 }
 
 /* FONTS */
@@ -84,7 +85,7 @@ nav a:not(:last-child) {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  font-family: "futoSansBold";
+  font-family: "futoSansBold" !important;
   color: white;
   z-index: 2;
   margin-top: 20px;
@@ -115,6 +116,7 @@ nav a:not(:last-child) {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  font-family: "futoSansBold" !important;
   
 }
 
@@ -126,3 +128,18 @@ nav a:not(:last-child) {
   top: -11px;
 }
 
+@media only screen and (max-width: 430px) {
+
+  .header {
+    display: none;
+   
+  }
+  
+  .logo {
+    /* Adjust the size of the logo according to your design */
+    width: 100px;
+    height: 50px;
+    margin-left:20px;
+    display: block !important;
+  }
+}

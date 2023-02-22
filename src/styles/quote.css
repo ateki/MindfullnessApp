@@ -1,18 +1,19 @@
 .quoteBackground{
-  background: url("../assets/moonBg.jpg");
+  background: url("../assets/quoteBackground.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  
 }
 
 .quoteH1{
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
-    color: #2c5555;
+    color: white;
 }
 
 
@@ -30,7 +31,7 @@
     margin-top: .5%;
     margin-left:auto;
     margin-right: auto;
-    color: #dce3e5;
+    color: white;
   }
 
   p.quote {
@@ -46,4 +47,50 @@
     max-width: 250px;
     height: auto;
     margin-top: 4.5rem;
+  }
+
+  @media only screen and (max-width: 430px) {
+
+    .q-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+      line-height: 2rem;
+      max-width: 100%;
+    }
+    
+    .quote-div{
+      margin-top: .5%;
+      margin-left:auto;
+      margin-right: auto;
+      color: white;
+      width: 300px;
+    }
+
+    p.quote {
+      font-size: 19px;
+    }
+
+    p.author {
+      font-size: 12px;
+      font-style: italic;
+      margin-bottom: 150px;
+    }
+
+    .book-icon {
+      width: 150px;
+      height: auto;
+      margin-top: 4.5rem;
+    }
+
+
+    .quoteH1{
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      font-size: 15px;
+  }
   }
