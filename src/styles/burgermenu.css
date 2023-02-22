@@ -1,28 +1,114 @@
+@media only screen and (min-width: 430px) {
+
+
 .burger-menu{
     position: fixed;
-    z-index: 3;
+    z-index: 4;
+    display: none;
 }
 
 
 .burger-menu-button{
-    width: 100px;
+    width: 70px;
+    position: fixed;
+    z-index: 4;
 }
 
 .burger-menu-list{
     z-index: 3;
-    background-color: grey;
+    background-color: white;
     width: 100vw;
     height: 100vh;
     text-align: center;
     font-family: FutoSansBold;
     color: black;
     text-decoration: none;
+    list-style-type: none;
+    
 }
 
 .burger-menu-list a{
    
+    font-family: FutoSansMedium;
+    color: black;
+    text-decoration: none;
+    margin: 80px 0px;
+    
+}
+
+.burger-menu-list li{
+   position: relative;
+   top: 150px;
+   font-size: 30px;
+   line-height: 90px;
+   text-decoration: underline;
+   text-underline-offset: 8px;
+    
+}
+
+.logoMobile {
+    /* Adjust the size of the logo according to your design */
+    width: 100px;
+    height: 50px;
+    margin-left:20px;
+    position: fixed;
+  }
+}
+
+
+@media only screen and (max-width: 430px) {
+
+
+.burger-menu{
+    position: fixed;
+    z-index: 4;
+}
+
+
+.burger-menu-button{
+    width: 70px;
+    position: fixed;
+    z-index: 4;
+}
+
+.burger-menu-list{
+    z-index: 3;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
     font-family: FutoSansBold;
     color: black;
     text-decoration: none;
-    margin: 20px 0px 20px 0px;
+    list-style-type: none;
+    
+}
+
+.burger-menu-list a{
+   
+    font-family: FutoSansMedium;
+    color: black;
+    text-decoration: none;
+    margin: 80px 0px;
+    
+}
+
+.burger-menu-list li{
+   position: relative;
+   top: 150px;
+   font-size: 30px;
+   line-height: 90px;
+   text-decoration: underline;
+   text-underline-offset: 8px;
+    
+}
+
+.logoMobile {
+    /* Adjust the size of the logo according to your design */
+    width: 100px;
+    height: 50px;
+    margin-left:90px;
+    margin-top: 10px;
+    position: fixed;
+  }
 }

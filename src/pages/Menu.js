@@ -5,6 +5,7 @@ import PomodoraIcon from "../assets/PomodoraIcon.png";
 import BreathIcon from "../assets/BreathIcon.png";
 import MeditationIcon from "../assets/MeditationIcon.png";
 import QuoteIcon from "../assets/QuoteIcon.png";
+import JournalIcon from "../assets/JournalIcon.png";
 
 const styles = {
 
@@ -91,10 +92,26 @@ function Menu(){
         <div className="menuBackground">
   
             <div className="menuIconsContainer">
-                <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
-                <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
+                <div className="iconContainer">
+                    <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
+                    <p className="iconText" >Focus</p>
+                </div>
+                <div className="iconContainer">
+                    <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
+                    <p className="iconText">Breathe</p>
+                </div>
+                <div className="iconContainer">
                 <img className="menuIcon3" src={MeditationIcon} onClick={() => navigate(`/Meditations`)}></img>
+                <p className="iconText iconText3">Meditate</p>
+                </div>
+                <div className="iconContainer">
                 <img className="menuIcon4" src={QuoteIcon} onClick={() => navigate(`/Quotes`)}></img>
+                <p className="iconText">Quotes</p>
+                </div>
+                 <div className="iconContainer">
+                <img className="menuIcon5" src={JournalIcon} onClick={() => navigate(`/Journal`)}></img>
+                <p className="iconText">Journal</p>
+                </div>
             </div>
   
             <div className='menu_options_container' style={styles.container}>

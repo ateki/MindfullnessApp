@@ -8,8 +8,10 @@ import T3G from "../assets/T3Grass.gif";
 import T4G from "../assets/T4Grass.gif";
 import T5G from "../assets/T5Grass.gif";
 import T6G from "../assets/T6Grass.gif";
+import petals from "../assets/FallingPetals.gif";
 import "../styles/garden.css";
 import garden from "../assets/Garden.png";
+import "../styles/landing.css";
 import { useState } from "react";
 
 function Garden() {
@@ -35,6 +37,7 @@ let [tree, treeGrowth] = useState(T2G);
 Let's Grow!
 </button>
       <div >
+        <img className="petals" src={petals}></img>
         <img className="tree" src={tree} />
       </div>
       
