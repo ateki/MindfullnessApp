@@ -1,7 +1,8 @@
 /**
  * Filename: PomodoroTimer.js
  * Contents:  
- *   With start and pause button functionality
+ *   So far with start, pause reset functionality.
+ * To be extende Settings/Actions/WorkRest Periods
  *   
  */
 
@@ -144,8 +145,6 @@ function PomodoroTimerOnStart(props) {
       const formatTimeLeft = (mins, secs) => {
         var mm = String(mins).padStart(2,'0');
         var ss = String(secs).padStart(2,'0');
-        console.log(`formatTimeLeft returns ${mm} : ${ss}`);
-
         return(`${mm} : ${ss}`);
       } 
 
@@ -159,13 +158,8 @@ function PomodoroTimerOnStart(props) {
      
 
       useEffect(() => {
-
-        // note to self:  use effect should only ever return a function or undefined
-
         // Runs each time change to the isTimerRunning boolean - triggered by button press
-        console.log(`first render ${timeLeft}  isTimerRunning = ${isTimerRunning}`);
 
-        
         if (isTimerRunning && timeLeft > 0) { 
 
         
@@ -190,7 +184,7 @@ function PomodoroTimerOnStart(props) {
 
         return undefined;
       
-    }, [isTimerRunning, timeLeft ]);     // Only run useEffect on button click - disable start /pause button when pressed.
+    }, [isTimerRunning, timeLeft]);     // Only run useEffect on button click - disable start /pause button when pressed.
 
 
 

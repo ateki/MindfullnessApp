@@ -4,8 +4,7 @@
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    height: 150vh;
 }
 
 .dropdown {
@@ -78,16 +77,18 @@
 }
 
 .dropdown-item {
+    color: #083444;
     width: 80vw;
-    height: 5vh;
+    height: 7vh;
     border: 0;
     opacity: 80%;
     border-top: 2px solid #fff;
 }
 
 .dropdown-item:last-child {
+    color: #083444;
     width: 80vw;
-    height: 5vh;
+    height: 7vh;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0;
@@ -97,4 +98,17 @@
 
 .dropdownContainer {
     padding-top: 25vh;
+}
+
+.icn{
+    height: 3vw;
+    margin-right: 1vw;
+}
+
+.dropdown button{
+    color: #083444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
 }

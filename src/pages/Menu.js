@@ -5,6 +5,7 @@ import PomodoraIcon from "../assets/PomodoraIcon.png";
 import BreathIcon from "../assets/BreathIcon.png";
 import MeditationIcon from "../assets/MeditationIcon.png";
 import QuoteIcon from "../assets/QuoteIcon.png";
+import JournalIcon from "../assets/JournalIcon.png";
 
 const styles = {
 
@@ -106,6 +107,10 @@ function Menu(){
                 <div className="iconContainer">
                 <img className="menuIcon4" src={QuoteIcon} onClick={() => navigate(`/Quotes`)}></img>
                 <p className="iconText">Quotes</p>
+                </div>
+                 <div className="iconContainer">
+                <img className="menuIcon5" src={JournalIcon} onClick={() => navigate(`/Journal`)}></img>
+                <p className="iconText">Journal</p>
                 </div>
             </div>
   

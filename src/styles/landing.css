@@ -17,7 +17,21 @@
     font-family: "RammettoOneRegular";
     color: white;
     font-size: 100px;
+
+    animation: fade-in-left 4s ease ;
 }
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 
 .bodyText{
     font-family:"FutoSansMedium" ;
@@ -42,7 +56,19 @@
     border-radius: 10px;
     margin-top: 30px;
     cursor: pointer;
+    animation: bounce 2s ease infinite;
 }
+
+
+  @keyframes bounce {
+      70% { transform:translateY(0%); }
+      80% { transform:translateY(-15%); }
+      90% { transform:translateY(0%); }
+      95% { transform:translateY(-7%); }
+      97% { transform:translateY(0%); }
+      99% { transform:translateY(-3%); }
+      100% { transform:translateY(0); }
+  }
 
 .landingButton:hover{
     background-color: #d87c8c;  
@@ -53,10 +79,11 @@
     filter: blur(5px);
     width: 100%;
     height: auto;
+    
 }
 
 .landingBackground2{
-    background: url("../assets/Waterfall.png");
+    background: url("../assets/Waterfallv2.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -105,6 +132,26 @@
     width: 100vw;
 }
 
+.lips{
+    position: absolute;
+    margin-left: 35%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.landingBackground5{
+    background: url("../assets/sunset.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+    
+}
+
+
 @media only screen and (max-width: 430px) {
 
     .landingPage{
@@ -114,9 +161,9 @@
     .landingBackground1{
         background: url("../assets/LandingPage.png");
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        /* background-attachment: fixed;
         background-position: center;
-        background-size: cover;
+        background-size: cover; */
         height: 100vh;
         width: 100vw;
     }
@@ -127,18 +174,15 @@
         font-size: 50px;
     }
     
+    
+    
     .bodyText{
         font-family:"FutoSansMedium" ;
         color: white;
         width: 350px;
     }
     
-    .textContainer{
-        position: relative;
-        top: 250px;
-        left: 20px;
-        
-    }
+   
     
     .landingButton{
         background-color: #F08A9B;
@@ -157,17 +201,19 @@
     
     .petals{
         position: absolute;
-        filter: blur(5px);
-        width: 300px !important;
+        filter: blur(1px);
+        width: 100vw !important;
         height: auto;
+        top: 100px;
+        left: -50px;
     }
     
     .landingBackground2{
         background: url("../assets/Waterfall.png");
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        /* background-attachment: fixed;
         background-position: center;
-        background-size: cover;
+        background-size: cover; */
         height: 100vh;
         width: 100vw;
     }
@@ -175,9 +221,9 @@
     .landingBackground3{
         background: url("../assets/CrystalCave.png");
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        /* background-attachment: fixed; */
         background-position: center;
-        background-size: cover;
+        /* background-size: cover; */
         height: 100vh;
         width: 100vw;
     }
@@ -186,16 +232,18 @@
     
     .meditatingMan{
         position: absolute;
-        margin-left: 35%;
+        margin-left: -0%;
         animation: MoveUpDown 13s linear infinite;
         position: absolute;
         bottom: -100px;
+        top: 300px;
+        width: 370px;
     }
     
       
       @keyframes MoveUpDown {
         0%, 100% {
-          bottom: -160px;
+          bottom: -100px;
         }
         50% {
           bottom: -80px;
@@ -205,11 +253,40 @@
       .landingBackground4{
         background: url("../assets/Cave.png");
         background-repeat: no-repeat;
+        /* background-attachment: fixed; */
+        background-position: center;
+        /* background-size: cover; */
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .lips{
+        position: absolute;
+        margin-left: 5%;
+        position: absolute;
+        bottom: -240px;
+        width: 300px;
+    }
+    
+
+    .landingBackground5{
+        background: url("../assets/sunset.jpg");
+        background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
         height: 100vh;
         width: 100vw;
+        display: none;
+    }
+
+    .textContainer{
+        position: relative;
+        top: 180px;
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+        
     }
 
   }

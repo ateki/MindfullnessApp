@@ -5,7 +5,7 @@ import {fas} from '@fortawesome/free-solid-svg-icons'
 
 
 import Header from './components/Header'
-import BurgerMenu from "./components/BurgerHeader"
+import BurgerMenu from "./components/Drawer"
 
 import Landing from './pages/Landing'
 import Menu from './pages/Menu'
@@ -18,6 +18,8 @@ import Pomodoro from './sub-pages/Pomodoro'
 import Meditations from './sub-pages/Meditations'
 import Sounds from './sub-pages/Sounds'
 import Quotes from './sub-pages/Quotes'
+import Music from './sub-pages/Music'
+import Journal from './sub-pages/Journal'
 
 library.add(fab, fas)
 
@@ -36,9 +38,10 @@ function App() {
       <Route path="/breathing" element={<Breathing/>} />
       <Route path="/pomodoro" element={<Pomodoro/>} />
       <Route path="/meditations" element={<Meditations/>} />
-      {/* <Route path="/music" element={<Music/>} /> */}
+      <Route path="/music" element={<Music/>} />
       <Route path="/sounds" element={<Sounds/>} />
       <Route path="/quotes" element={<Quotes/>} />
+      <Route path="/journal" element={<Journal/>} />
 
 
 
