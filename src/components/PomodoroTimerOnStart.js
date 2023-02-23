@@ -6,8 +6,21 @@
  *   
  */
 
-
 import { useState, useEffect } from 'react';
+import PomodoroSlider from './PomodoroSlider';
+
+import '../styles/pomodoro.css';
+
+
+/* Work Slider settings */
+const WORK_TIME_DEFAULT_IN_MINS = 25;  // Initial starting time
+const WORK_SLIDER_STEP = 5;
+const WORK_TIME_MIN = 5;
+const WORK_TIME_MAX = 60;
+
+
+
+const AUDIO_ALARM = new Audio('./assets/sfx/alarm.wav');
 
 
 const styles = {
@@ -83,48 +96,28 @@ const styles = {
 };
 
 
-/* Slider settings
-const TIME_DEFAULT = 25;
-const TIME_MIN = 5;
-const TIME_MAX = 60;
-
-const marks = [
-  {
-    value: 5,
-    label: '5 min',
-  },
-  {
-    value: 10,
-    label: '10 min',
-  },
-  {
-    value: 20,
-    label: '20 min',
-  },
-  {
-    value: 60,
-    label: '60 min',
-  },
-];
- */
-
-
 
 /**
  * 
  * @param {*} props 
  * @returns 
  */
- //TODO Slider added and pass time set to countdown
 function PomodoroTimerOnStart(props) {
 
-      // Initial starting time
-      const DEFAULT_WORK_DURATION  = 1500; // 25 mins
+      // Initial starting time/
+      const WORK_TIME_DEFAULT_IN_SECS  = WORK_TIME_DEFAULT_IN_MINS * 60; // 5 mins 
     
-      // Time remaining 
-      const [timeLeft, setTimeLeft] = useState(DEFAULT_WORK_DURATION);
+      // Time remaining in secs
+      const [timeLeft, setTimeLeft] = useState(WORK_TIME_DEFAULT_IN_SECS);
       const [isTimerRunning, setIsTimerRunning]= useState(false); 
 
+
+      const initTimer = (newTimeInMins) => {
+        console.log(`initTimer ${newTimeInMins}`);
+        
+        setIsTimerRunning(false);
+        setTimeLeft(newTimeInMins * 60);
+      }
       const startTimer = () => {
         setIsTimerRunning(true);
 
@@ -135,7 +128,7 @@ function PomodoroTimerOnStart(props) {
       }
       const resetTimer = () => {
         setIsTimerRunning(false);
-        setTimeLeft(DEFAULT_WORK_DURATION);
+        setTimeLeft(WORK_TIME_DEFAULT_IN_SECS);
 
       }
 
@@ -162,7 +155,7 @@ function PomodoroTimerOnStart(props) {
         return formatTimeLeft(mins, secs);
         //return `${mins < 10 ? '0' + min : min} : ${secs < 10 ? '0' + secs : secs}`;
       }
-      
+     
 
       useEffect(() => {
         // Runs each time change to the isTimerRunning boolean - triggered by button press
@@ -183,12 +176,16 @@ function PomodoroTimerOnStart(props) {
             return () => clearInterval(intervalId);
 
         } else if (timeLeft===0) {
-          setIsTimerRunning(false);
+            setIsTimerRunning(false);
+            /* Play audio */
+        
+
         }
 
         return undefined;
       
     }, [isTimerRunning, timeLeft]);     // Only run useEffect on button click - disable start /pause button when pressed.
+
 
 
 
@@ -217,15 +214,16 @@ function PomodoroTimerOnStart(props) {
               )
             }
 
+              
             {/* show reset button only when timer not running and not at start ie: timesLeft < timer duration */}
-            {
-            /*   !isTimerRunning && (timeLeft < TEST_DURATION}) */
-              (!isTimerRunning && timeLeft < DEFAULT_WORK_DURATION)
+{/*             {
+              (!isTimerRunning && timeLeft < WORK_TIME_DEFAULT_IN_SECS)
               ? 
               (
                   <input type="button" value="Reset" style={styles.ctrlBtn} 
                       onClick={() => resetTimer()
                   }/>
+                  
               )
               : 
              
@@ -233,8 +231,19 @@ function PomodoroTimerOnStart(props) {
                 <input type="button" value="HiddenReset" style={styles.ctrlBtnHidden} 
                     onClick={() => resetTimer()
                 }/>
-            )
-            }     
+              ) 
+            }    
+            */} 
+          
+          <PomodoroSlider            
+              value={timeLeft}
+              step={WORK_SLIDER_STEP}
+              min={WORK_TIME_MIN}
+              max={WORK_TIME_MAX} 
+              default={WORK_TIME_DEFAULT_IN_MINS}
+              onChange = {(_, newValue) => initTimer(newValue)} />
+
+         
         </div> 
       </div>
     )
