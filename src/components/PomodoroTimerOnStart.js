@@ -1,9 +1,12 @@
 /**
  * Filename: PomodoroTimer.js
  * Contents:  
- *   So far with start, pause reset functionality.
- * To be extende Settings/Actions/WorkRest Periods
- *   
+ *   Pomodoro clock with start/pause buttons.  Initially implemented a RESET button
+ * however have temporarily replaced this with the work duration slider and commented out temporarily RESET.
+ * Plan is to move to a seperate settings page where slider should sit.  Once this happens, RESET functionality should
+ * be visible from this page.
+ * TODO: Extend with seperate Settings page where set work and rest duration periods. User should be able to select from a list of editable todo items.
+ * to determine which action should be focused on.
  */
 
 import { useState, useEffect } from 'react';
@@ -113,11 +116,10 @@ function PomodoroTimerOnStart(props) {
 
 
       const initTimer = (newTimeInMins) => {
-        console.log(`initTimer ${newTimeInMins}`);
-        
         setIsTimerRunning(false);
         setTimeLeft(newTimeInMins * 60);
       }
+
       const startTimer = () => {
         setIsTimerRunning(true);
 
@@ -126,6 +128,7 @@ function PomodoroTimerOnStart(props) {
         setIsTimerRunning(false);
 
       }
+
       const resetTimer = () => {
         setIsTimerRunning(false);
         setTimeLeft(WORK_TIME_DEFAULT_IN_SECS);
@@ -135,7 +138,7 @@ function PomodoroTimerOnStart(props) {
 
       /**
        * Returns string representing time in format: mm : ss
-       * Paddiing out any single digit ensuring mins or secs passed in are always displayed as 2 digits
+       * Padding out any single digit ensuring mins or secs passed in are always displayed as 2 digits
        * ( 01 : 00,   12 : 03)
        * Ensures text stays on same position
        * @param {*} mins 
@@ -214,7 +217,7 @@ function PomodoroTimerOnStart(props) {
               )
             }
 
-              
+            {/* TODO:This will be used once we move to settings page - where slider will be on settins page. */}
             {/* show reset button only when timer not running and not at start ie: timesLeft < timer duration */}
 {/*             {
               (!isTimerRunning && timeLeft < WORK_TIME_DEFAULT_IN_SECS)
