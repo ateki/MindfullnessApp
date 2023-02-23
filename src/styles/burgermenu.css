@@ -14,7 +14,7 @@
     z-index: 4;
 }
 
-.burger-menu-list{
+/* .burger-menu-list{
     z-index: 3;
     background-color: white;
     width: 100vw;
@@ -25,7 +25,7 @@
     text-decoration: none;
     list-style-type: none;
     
-}
+} */
 
 .burger-menu-list a{
    

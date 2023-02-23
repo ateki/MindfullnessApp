@@ -23,7 +23,10 @@ let [tree, treeGrowth] = useState(T2G);
     <div className="gardenBackground">
       
 
-      <button className="treeButton" onClick={() => {
+      
+      <div >
+        <img className="petals" src={petals}></img>
+        <img className="tree" src={tree} onClick={() => {
   if (tree === T2G) {
     treeGrowth(T3G);
   } else if (tree === T3G) {
@@ -33,12 +36,7 @@ let [tree, treeGrowth] = useState(T2G);
   } else if(tree === T5G) {
     treeGrowth(T6G)
   } else {}
-}}>
-Let's Grow!
-</button>
-      <div >
-        <img className="petals" src={petals}></img>
-        <img className="tree" src={tree} />
+}} />
       </div>
       
     </div>

@@ -25,6 +25,8 @@
     text-align: center;
     line-height: 2rem;
     max-width: 100%;
+
+    
   }
   
   .quote-div{
@@ -32,6 +34,17 @@
     margin-left:auto;
     margin-right: auto;
     color: white;
+    animation: fade-in-left 4s ease ;
+  }
+  @keyframes fade-in-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   p.quote {

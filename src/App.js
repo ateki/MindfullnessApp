@@ -5,7 +5,7 @@ import {fas} from '@fortawesome/free-solid-svg-icons'
 
 
 import Header from './components/Header'
-import BurgerMenu from "./components/BurgerHeader"
+import BurgerMenu from "./components/Drawer"
 
 import Landing from './pages/Landing'
 import Menu from './pages/Menu'

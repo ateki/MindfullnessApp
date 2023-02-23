@@ -20,6 +20,18 @@
     overflow-y: hidden !important;
     position: relative;
     top: 200px;
+
+    animation: fade-in-left 2s ease ;
+}
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .iconText{
@@ -38,17 +50,20 @@
     width: 300px;
         height: auto;
 }
+
+
 .menuIcon1:hover{
-    margin: 22px 10px 10px 10px;
+    margin: 12px 10px 10px 10px;
     opacity: 0.8;
 }
+
 .menuIcon2{
     margin: 10px 10px 10px 10px;
     width: 300px;
         height: auto;
 }
 .menuIcon2:hover{
-    margin: 10px 10px 10px 10px;
+    margin: 5px 10px 10px 10px;
     opacity: 0.8;
 }
 
@@ -60,7 +75,7 @@
         height: auto;
 }
 .menuIcon3:hover{
-    margin: 10px 10px 10px 10px;
+    margin: 1px 10px 10px 10px;
     opacity: 0.8;
 }
 
@@ -70,7 +85,7 @@
         height: auto;
 }
 .menuIcon4:hover{
-    margin: 7px 10px 10px 10px;
+    margin: 0px 10px 10px 10px;
     opacity: 0.8;
 }
 

@@ -2,19 +2,24 @@ import "../styles/landing.css";
 import petals from "../assets/FallingPetals.gif";
 import woman from "../assets/MeditatingWoman.png";
 import man from "../assets/MeditatingMan.png";
+import lips from "../assets/lips.gif"
+import Drawer from "../components/Drawer"
 
 import React, { useState, useEffect } from "react";
 
 function Landing() {
   return (
-    <div>
+    <div className="landingPage">
+
       <div className="landingBackground1">
         <img className="petals" src={petals}></img>
         <div className="textContainer">
           <h1 className="mainTitle">MINDFULL</h1>
           <div className="bodyText">
+
           An app that helps you stay focused, relaxed, and inspired. Our app is designed to support your mental and emotional well-being, offering a range of features to help you cultivate mindfulness and find inner peace.
           Start your mindfulness journey today and discover the peace and clarity that comes with a mindful life.
+
           </div>
           <a href="/menu">
             <button className="landingButton">Start the Journey</button>
@@ -60,6 +65,7 @@ function Landing() {
           <a href="/Quotes">
             <button className="landingButton">Start the Journey</button>
           </a>
+          <img className="lips" src={lips}></img>
         </div>
       </div>
 
