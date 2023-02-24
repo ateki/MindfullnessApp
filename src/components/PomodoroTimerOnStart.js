@@ -45,7 +45,7 @@ const styles = {
       margin: 'auto' 
     },
 
-    /* CIRCLE FOR TIMER - transparent - flex item */
+    /* CIRCLE FOR TIMER - transparent -  flex item */
     timer_circle: {
       display: 'flex',    // container of text
       justifyContent: 'center',

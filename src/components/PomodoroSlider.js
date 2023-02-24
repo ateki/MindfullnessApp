@@ -56,7 +56,6 @@ function PomodoroSlider(props) {
   );
 }
 
-
 export default PomodoroSlider;
 
 

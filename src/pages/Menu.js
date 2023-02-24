@@ -87,7 +87,6 @@ function Menu(){
 
     const navigate = useNavigate();
 
-
     return (
         <div className="menuBackground">
   

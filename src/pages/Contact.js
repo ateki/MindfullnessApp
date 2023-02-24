@@ -107,7 +107,6 @@ function Contact(){
                         <FontAwesomeIcon className="icon in" icon="fa-brands fa-linkedin-in" size="lg"/>
                     </a> 
                 </div>
-
                 
                 {/* Only display message once successfully sent */}
                 {success && <p className="success_msg">Your message has be sent. &nbsp; We will be in contact as soon as possible.</p>}
