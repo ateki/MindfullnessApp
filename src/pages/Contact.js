@@ -31,12 +31,8 @@ function Contact(){
    
         event.preventDefault();
 
-        // const formData = new FormData(form);
-        // const object = Object.fromEntries(formData);
-        
         const dataJSON = JSON.stringify(formData);
 
-        // result.innerHTML = "Please wait..." 
       
           fetch('https://api.web3forms.com/submit', {
                   method: 'POST',

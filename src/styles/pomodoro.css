@@ -1,12 +1,15 @@
 /* TODO: Move pomodoro styling from component to here... */
 
-.startBtn:hover {
-    background-color: #d87c8c
+.ctrlBtn:hover {
+    background-color: #d87c8c !important;
 }
-
 
 .pomosliderstyle {
     color: #d87c8c !important;
+  }
+
+  .pomosliderstyle:hover {
+    color: #d17988 !important;
   }
 
 
@@ -14,4 +17,6 @@
     
     color: white !important;
     text-align: center;
+
 }
+

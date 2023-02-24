@@ -93,43 +93,39 @@ function Menu(){
   
             <div className="menuIconsContainer">
                 <div className="iconContainer">
-                    <img className="menuIcon1" src={PomodoraIcon} onClick={() => navigate(`/Pomodoro`)}></img>
+                    <img className="menuIcon1" src={PomodoraIcon} alt="go to Pomodoro Focus Session " onClick={() => navigate(`/Pomodoro`)}></img>
                     <p className="iconText" >Focus</p>
                 </div>
                 <div className="iconContainer">
-                    <img className="menuIcon2" src={BreathIcon} onClick={() => navigate(`/Breathing`)}></img>
+                    <img className="menuIcon2" src={BreathIcon} alt="go to Breathing visualisation tool" onClick={() => navigate(`/Breathing`)}></img>
                     <p className="iconText">Breathe</p>
                 </div>
                 <div className="iconContainer">
-                <img className="menuIcon3" src={MeditationIcon} onClick={() => navigate(`/Meditations`)}></img>
+                <img className="menuIcon3" src={MeditationIcon} alt="got to Meditations" onClick={() => navigate(`/Meditations`)}></img>
                 <p className="iconText iconText3">Meditate</p>
                 </div>
                 <div className="iconContainer">
-                <img className="menuIcon4" src={QuoteIcon} onClick={() => navigate(`/Quotes`)}></img>
+                <img className="menuIcon4" src={QuoteIcon} alt="go to Quotes for inspiration" onClick={() => navigate(`/Quotes`)}></img>
                 <p className="iconText">Quotes</p>
                 </div>
                  <div className="iconContainer">
-                <img className="menuIcon5" src={JournalIcon} onClick={() => navigate(`/Journal`)}></img>
+                <img className="menuIcon5" src={JournalIcon} alt="got to Journalling" onClick={() => navigate(`/Journal`)}></img>
                 <p className="iconText">Journal</p>
                 </div>
             </div>
   
             <div className='menu_options_container' style={styles.container}>
-                  <input type="button"  disabled='true' style={styles.button}  value="Gratefulness"/>
-                  <input type="button"  disabled='true' style={styles.button}  value="Journal"/>
+                  <input type="button"  disabled style={styles.button}  value="Gratefulness"/>
+                  <input type="button"  disabled style={styles.button}  value="Journal"/>
                   <input type="button"  style={styles.button} onClick={() => navigate(`/Breathing`)} value="Breathing"/>
                   <input type="button"  style={styles.button} onClick={() => navigate(`/Meditations`)} value="Meditation"/>
-                  <input type="button"  disabled='true' style={styles.button}  value="Priority Helper Matrix"/>
-                  <input type="button"  disabled='true' style={styles.button}  value="Worry Tree Time"/>
+                  <input type="button"  disabled style={styles.button}  value="Priority Helper Matrix"/>
+                  <input type="button"  disabled style={styles.button}  value="Worry Tree Time"/>
                   <input type="button"  style={styles.button} onClick={() => navigate(`/Quotes`)} value="Quotes"/>
                   <input type="button"  style={styles.button} onClick={() => navigate(`/Pomodoro`)} value="Pomodoro"/>
                   <input type="button"  style={styles.button} onClick={() => navigate(`/Sounds`)} value="Sounds/Music"/>
             </div>
   
-{/*             <div className="menu_options_container" style={styles.container}>
-         
-            </div> */}
-        
       </div>
      
       )

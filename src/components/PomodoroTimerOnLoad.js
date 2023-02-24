@@ -1,17 +1,14 @@
 /**
  * Filename: PomodoroTimer.js
  * Contents:  
+ * Used to start Pomodoro timer on page load.
  * 
  */
-
-/* import Slider from '@mui/material/Slider';
-// or */
-/* import { Slider } from '@mui/material'; */
 
 import Slider from "@material-ui/core/Slider";
 
 import { useState, useEffect } from 'react';
-//import '../styles/pomodoro.css';
+import '../styles/pomodoro.css';
 
 import DigitalDisplay from './DigitalDisplay';
 
@@ -61,25 +58,20 @@ const styles = {
       textAlign: 'center',
       fontWeight: 'bold',
       zIndex: '2'
-    },
+    }
  
-   
+/*    
     startBtn: {
       backgroundColor: '#F08A9B',
       fontFamily: 'FutoSansBold',
-      /* fontSize: , */
       color: 'white',
       borderStyle: 'none',
       padding: '16px 40px 16px 40px',
       borderRadius: '10px',
       marginTop: '30px',
       width: '50%'
-    },
+    } */
 
-    /* TODO: Move styles to css file, import and include hover as no inline equivalent. */
-    'startBtn:hover': {
-        backgroundColor: '#d87c8c' 
-    }
 };
 
 
@@ -133,8 +125,6 @@ const formatTimeLeft = (mins, secs) => {
  * @param {*} props 
  * @returns 
  */
-//TODO Slider added and pass time set to countdown
-// TODO Attempted to have DigitalTime Display but ggetting error too many re-renders.
 function PomodoroTimer(props) {
 
 
@@ -149,24 +139,9 @@ function PomodoroTimer(props) {
   const [countdownDisplay, setCountdownDisplay] = useState(null); 
 
 
-  
-/*   const updateTimeLeft  = () => {
-
-        if (secsLeft>0)  {
-          setSecsLeft(secsLeft-1); // setSecsLeft(secsLeft => secSecsLeft -1) callback version get updated value and -1
-        } else if (minsLeft>0 && secsLeft===0) {
-          setMinsLeft(minsLeft-1);
-          setSecsLeft(59);
-        } 
-        // else reached zero
-  } */
-
-
 
 // use secret second mode
   const updateTimeLeft  = () => {
-    console.log(`1)------------------secsLeft = ${secsLeft}  minsLeft = ${minsLeft}`);
-
     if (minsLeft>0 && secsLeft===0) {
       setMinsLeft( minsLeft-1);
       setSecsLeft(59);
@@ -174,34 +149,11 @@ function PomodoroTimer(props) {
     } else if (secsLeft>0)  {
       setSecsLeft(secsLeft-1)
     } 
-    // TODO time ended
-    // display message?  Break time - sound an alarm for x seconds or have popup modal where can end alarm
-    
-    console.log(`2)------------------secsLeft = ${secsLeft}  minsLeft = ${minsLeft}`);
+
 }
 
-
-//TODO Use timeout or interval?  works before buttons added - auto start but slight delay before ..
-// but npothing shown...
-// if coment out call to update before setINterval works
-
-/*   // Option1: setInterval 
-  useEffect(() => {
-      console.log(`first time ${minsLeft} : ${secsLeft}  `);
- 
-        const interval = setInterval(() => {
-            clearInterval(interval);
-            updateTimeLeft(); 
-            setCountdownDisplay(formatTimeLeft(minsLeft, secsLeft)); 
-
-    }, 1000); //  every sec update display
-
-  }, [secsLeft]);  // dependency array - any data changed then execute the callback function
- */
-  
   // Option1: setTimeout 
   useEffect(() => {
-    console.log(`first time ${minsLeft} : ${secsLeft}  `);
         const timeout = setTimeout(() =>  {
           updateTimeLeft(); 
           setCountdownDisplay(formatTimeLeft(minsLeft, secsLeft)); 
@@ -217,11 +169,7 @@ function PomodoroTimer(props) {
 
             <div className="timer_circle" style={styles.timer_circle}>
                 <p className="count_down" style={styles.count_down}>{countdownDisplay}</p> 
-                {/* <DigitalDisplay mins={minsLeft} secs={secsLeft}/> */}
             </div>
-
-   {/*          <input type="button"  style={styles.startBtn} onClick={() => console.log('pomodoro start button clicked')} value="Start"/>
- */}
         </div> 
       </div>
     )
