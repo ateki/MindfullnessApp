@@ -152,7 +152,6 @@ const CLASSNAME_CONTAINER_GROW = 'container inflate_bubble';
 const CLASSNAME_CONTAINER_SHRINK = 'container deflate_bubble';
 
 
-
 /**
  * The below visually replicates inhale,hold,exhale breath: where change in breathing is timed and stage of
  * breathing is displayed in a prompt message.

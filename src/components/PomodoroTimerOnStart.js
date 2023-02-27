@@ -1,9 +1,13 @@
 /**
  * Filename: PomodoroTimer.js
  * Contents:  
- *   So far with start, pause reset functionality.
- * To be extende Settings/Actions/WorkRest Periods
- *   
+ *   Pomodoro clock with start/pause buttons.  Initially implemented a RESET button
+ * however have temporarily replaced this with the work duration slider and commented out temporarily RESET.
+ * Plan is to move to a seperate settings page where slider should sit.  Once this happens, RESET functionality should
+ * be visible from this page.
+ * TODO: Extend with seperate Settings page where set work and rest duration periods. User should be able to select from a list of editable todo items.
+ * to determine which action should be focused on.
+ * TODO: Play alarm until user switches off.
  */
 
 import { useState, useEffect } from 'react';
@@ -13,15 +17,15 @@ import '../styles/pomodoro.css';
 
 
 /* Work Slider settings */
-const WORK_TIME_DEFAULT_IN_MINS = 25;  // Initial starting time
+const WORK_TIME_DEFAULT_IN_MINS = 25;   // Initial starting time
 const WORK_SLIDER_STEP = 5;
 const WORK_TIME_MIN = 5;
 const WORK_TIME_MAX = 60;
 
 
 
-const AUDIO_ALARM = new Audio('./assets/sfx/alarm.wav');
-
+//const AUDIO_ALARM = new Audio('./assets/sfx/alarm.wav');
+//const ALARM_DURATION = 6000;  // 6 secs for now until integrated with popup modal to stop alarm
 
 const styles = {
 
@@ -41,7 +45,7 @@ const styles = {
       margin: 'auto' 
     },
 
-    /* CIRCLE FOR TIMER - transparent - flex item */
+    /* CIRCLE FOR TIMER - transparent -  flex item */
     timer_circle: {
       display: 'flex',    // container of text
       justifyContent: 'center',
@@ -66,6 +70,10 @@ const styles = {
       zIndex: '2'
     },
  
+
+/* .controlBtn:hover {
+  background-color: #d87c8c; */
+
     /* CONTROL BUTTONS */
     ctrlBtn: {
       backgroundColor: '#F08A9B',
@@ -113,19 +121,23 @@ function PomodoroTimerOnStart(props) {
 
 
       const initTimer = (newTimeInMins) => {
-        console.log(`initTimer ${newTimeInMins}`);
-        
         setIsTimerRunning(false);
         setTimeLeft(newTimeInMins * 60);
       }
+
       const startTimer = () => {
         setIsTimerRunning(true);
 
       }
       const pauseTimer = () => {
         setIsTimerRunning(false);
-
       }
+
+      const soundAlarm = () => {
+          //console.log(`sound alarm`);
+          //new Audio(AUDIO_ALARM).play();
+      }
+
       const resetTimer = () => {
         setIsTimerRunning(false);
         setTimeLeft(WORK_TIME_DEFAULT_IN_SECS);
@@ -135,7 +147,7 @@ function PomodoroTimerOnStart(props) {
 
       /**
        * Returns string representing time in format: mm : ss
-       * Paddiing out any single digit ensuring mins or secs passed in are always displayed as 2 digits
+       * Padding out any single digit ensuring mins or secs passed in are always displayed as 2 digits
        * ( 01 : 00,   12 : 03)
        * Ensures text stays on same position
        * @param {*} mins 
@@ -165,7 +177,6 @@ function PomodoroTimerOnStart(props) {
         
             // Decrement from time every second if timer running, continuesly run below code in setINterval, every sec:
             const intervalId = setInterval(() => {
-                  console.log(`body of setInterval executing ${isTimerRunning}`); // only executes once
                   setTimeLeft(timeLeft => timeLeft -1);
             
             }, 1000); //  every sec update display
@@ -177,9 +188,12 @@ function PomodoroTimerOnStart(props) {
 
         } else if (timeLeft===0) {
             setIsTimerRunning(false);
-            /* Play audio */
-        
-
+            /* Play audio - for now 10 secs until implement popup modal */
+            //soundAlarm();
+            //const alarmTimeout = setTimeout(() => {
+            //    clearTimeout(alarmTimeout);
+            //}, ALARM_DURATION); // setTimeout
+         
         }
 
         return undefined;
@@ -202,25 +216,26 @@ function PomodoroTimerOnStart(props) {
               isTimerRunning
               ? 
               (
-                  <input type="button" value="Pause" style={styles.ctrlBtn} disabled={!isTimerRunning} 
+                  <input type="button" value="Pause" className="ctrlBtn" style={styles.ctrlBtn} /* disabled={!isTimerRunning} */ 
                       onClick={() => pauseTimer()
                   }/>
               )
               : 
               (
-                  <input type="button" value="Start" style={styles.ctrlBtn} disabled={isTimerRunning} 
+                  <input type="button" value="Start" className="ctrlBtn" style={styles.ctrlBtn} /* disabled={isTimerRunning}  */
                       onClick={() =>  startTimer() 
                   }/>  
               )
             }
 
-              
+            {/* TODO: KEEP THIS COMMENTED OUT UNTIL MOVE TO SETTINGS PAGE:
+            This will be used once we move to settings page - where slider will be on settins page. */}
             {/* show reset button only when timer not running and not at start ie: timesLeft < timer duration */}
 {/*             {
               (!isTimerRunning && timeLeft < WORK_TIME_DEFAULT_IN_SECS)
               ? 
               (
-                  <input type="button" value="Reset" style={styles.ctrlBtn} 
+                  <input type="button" value="Reset" className="ctrlBtn"  style={styles.ctrlBtn} 
                       onClick={() => resetTimer()
                   }/>
                   
@@ -228,22 +243,23 @@ function PomodoroTimerOnStart(props) {
               : 
              
               (
-                <input type="button" value="HiddenReset" style={styles.ctrlBtnHidden} 
+                <input type="button" value="HiddenReset" className="ctrlBtn" style={styles.ctrlBtnHidden} 
                     onClick={() => resetTimer()
                 }/>
               ) 
             }    
             */} 
-          
-          <PomodoroSlider            
-              value={timeLeft}
-              step={WORK_SLIDER_STEP}
-              min={WORK_TIME_MIN}
-              max={WORK_TIME_MAX} 
-              default={WORK_TIME_DEFAULT_IN_MINS}
-              onChange = {(_, newValue) => initTimer(newValue)} />
 
-         
+            <PomodoroSlider  
+                                  /* visible={'true'}      */     
+                                  value={timeLeft}
+                                  step={WORK_SLIDER_STEP}
+                                  min={WORK_TIME_MIN}
+                                  max={WORK_TIME_MAX} 
+                                  default={WORK_TIME_DEFAULT_IN_MINS}
+                                  onChange = {(_, newValue) => initTimer(newValue)} />
+
+        
         </div> 
       </div>
     )
