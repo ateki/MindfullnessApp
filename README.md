@@ -52,7 +52,7 @@ Code / React : Before running ```npm start``` please run ```npm install --force`
 
 To use just visit the deployed page at :
 
----Link comes here---
+[Mindful App](https://mindfulmindful.netlify.app/)
 
 ## License 
 
